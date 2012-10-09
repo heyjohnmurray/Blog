@@ -1,0 +1,32 @@
+/***********************************
+Main Stylesheet - Site Name
+Last Updated: 3/2/12
+***********************************/
+
+
+/* Fonts */
+
+
+/* Defaults */
+.button, a.button {
+	float: left;
+	height: 30px;
+	padding: 10px 25px 0;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	background: #464646 url(../images/bg_stripes.png) repeat;
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	margin-right: 20px;
+}
+.button:hover, a.button:hover {background-color: #252525;}
+
+
+/* Typography */
+
+
+/* Nav */
+nav li {margin-bottom: 0;}
