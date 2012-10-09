@@ -27,6 +27,7 @@ I'm going to create my own blog platorm
 	<li>email newsletter signup</li>
 	<li>site-wide full text search</li>
 	<li>allow image upload</li>
+	<li>sidebar content - "popular posts", "popular categories", "popular authors" list etc ...</li>
 </ol>
 <p>Optional/Long-term Features:</p>
 <ol>
