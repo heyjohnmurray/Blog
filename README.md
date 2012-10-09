@@ -35,3 +35,8 @@ I'm going to create my own blog platorm
 	<li>try using LESS</li>
 	<li>allow users to share posts via FB &amp; Twitter</li>
 </ol>
+
+#Design inspiration
+<ol>
+	<li>http://www.vfxdude.com/bigfeature/</li>
+</ol>
