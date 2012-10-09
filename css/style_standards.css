@@ -41,8 +41,8 @@ hr {
 p:last-child {margin-bottom: 0;}
 input, select {vertical-align: middle;}
 input[type=button], input[type=submit], button {cursor: pointer; border: 0;}
-.left {float: left;}
-.right {float: right;}
+.float-left {float: left;}
+.float-right {float: right;}
 .center {text-align: center;}
 .bold, b, strong {font-weight: bold;}
 .italic, i {font-style: italic;}
@@ -158,3 +158,24 @@ ul.square {list-style-type: square; margin-left: 20px;}
 table {width: 100%;}
 table th, table td {text-align: left;}
 
+
+/* Clearing */
+.clear {clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0;}
+.row:before, .row:after {content: ""; display: block; height: 0; overflow: hidden; visibility: hidden;}
+.row:after {clear: both;}
+
+/********************************************************************************
+			CLEARING ELEMENTS THAT CONTAIN FLOATED ELEMENTS
+********************************************************************************/
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
