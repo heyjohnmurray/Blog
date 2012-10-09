@@ -4,29 +4,33 @@ This is my first venture into php/MySQL development. This project is my chance t
 #Objective
 I'm going to create my own blog platorm
 
-#Pages needed:
-
-$ * admin panel template
-$ * add post template
-$ * comments template
-$ * login template
-$ * new user template			
-$ * post category template
-$ * individual author posts template
-
-#Features:
-		
-$ * Login/Logout functionality
-$ * needs to be html5
-$ * needs to be responsive - try Foundation framework
-$ * contact form	
-	$ ** needs to send emails to admin for every submission
-	$ ** should use ajax submission
-$ * email newsletter signup
-$ * site-wide full text search
-$ * allow image upload
-
-#Optional/Long-term Features:
-$ * use Modernizr
-$ * try using LESS
-$ * allow users to share posts via FB &amp; Twitter
+<ol>
+	<li>admin panel template</li>
+	<li>add post template</li>
+	<li>comments template</li>
+	<li>login template</li>
+	<li>new user template</li>			
+	<li>post category template</li>
+	<li>individual author posts template</li>
+</ol>
+<p>Features:</p>
+<ol>			
+	<li>Login/Logout functionality</li>
+	<li>needs to be html5</li>
+	<li>needs to be responsive - try Foundation framework</li>
+	<li>contact form
+		<ul>
+			<li>needs to send emails to admin for every submission</li>
+			<li>should use ajax submission</li>
+		</ul>
+	</li>
+	<li>email newsletter signup</li>
+	<li>site-wide full text search</li>
+	<li>allow image upload</li>
+</ol>
+<p>Optional/Long-term Features:</p>
+<ol>
+	<li>use Modernizr</li>
+	<li>try using LESS</li>
+	<li>allow users to share posts via FB &amp; Twitter</li>
+</ol>
