@@ -240,8 +240,7 @@ hr{border-top: medium double #c4c4c4;}
 
 .admin-form{margin: 20px auto;}
 .admin-form label{width: 100%; display: block;}
-.admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px; font-size: 20px;}
-.admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {margin: 5px 0px; padding: 10px 5px; font-size: 20px; width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 .admin-form textarea{height: 200px; margin: 0px 0px 10px 0px;}
 
 /* Sidebar */

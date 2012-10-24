@@ -1,9 +1,7 @@
 <?
-	require_once('../_db_connect.php');
 	$page = "add-post-page";	
 	$title = "Add a Post";
-	session_start();
-	
+	session_start();	
 	require_once('includes/header.php'); 
 ?>
 	<section id="content">
