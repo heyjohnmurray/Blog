@@ -30,13 +30,8 @@ thelifemgmt@gmail.com
 .box-15 {width:880px;}
 .box-16 {width:940px;}
 .box-3.sixth {width:140px;}
-/*
 .box-5.third{width:300px;}
 .box-10.two-third{width:620px;}
-*/
-.box-5.third{width:240px;}
-.box-10.two-third{width:580px;}
-
 
 .box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7, .box-8,
 .box-9, .box-10, .box-11, .box-12, .box-13, .box-14, .box-15, .box-16,
@@ -50,6 +45,10 @@ thelifemgmt@gmail.com
 .clear {clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0;}
 .row:before, .row:after {content: ""; display: block; height: 0; overflow: hidden; visibility: hidden;}
 .row:after {clear: both;}
+
+
+/* Container */
+.container {position: relative; width: 960px; margin: 0 auto;}
 
 
 /* Media Queries */

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <? require_once('includes/header.php'); ?>
+<<<<<<< HEAD
 =======
 <?
 	require_once('../_db_connect.php');
@@ -32,7 +33,35 @@
 			</div><!-- close row -->
 		</div><!--/.box-16-->	
 	</section>
+=======
+<body>
+
+<header role="banner">
+	<div class="container">
+		<div class="row">
+			<div class="box-16">
+				<nav role="navigation">
+					<ul>
+						<li>nav</li>
+					</ul>
+				</nav>
+			</div><!--/.box-16-->
+		</div><!--/.row-->
+	</div><!--/.container-->
+</header>
+
+<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="box-16">
+				content
+			</div><!--/.box-16-->
+		</div><!--/.row-->
+	</div><!--/.container-->
+</section>
+
+>>>>>>> parent of c288e3b... basic page template
 <? require_once('includes/footer.php'); ?>
-</div>
+
 </body>
 </html>

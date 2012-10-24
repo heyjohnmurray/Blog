@@ -1,12 +1,8 @@
-/* Fonts 
-font-family: 'Lato', sans-serif;
-font-weight: 100; LIGHT 
-font-weight: 300; NORMAL
-*/
-
 /***********************************************
 Standards Stylesheet
 ***********************************************/
+
+
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -63,6 +59,23 @@ input[type=button], input[type=submit], button {cursor: pointer; border: 0;}
 .position {position: relative;}
 small {font-size: 11px;}
 
+
+/* Body */
+body {
+	font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	color: #707070;
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+	color: #363636;
+	margin-bottom: 20px;
+}
 a:link, a:visited, a:active, a {
 	text-decoration: none;
 	color: #d00d00;
@@ -151,6 +164,7 @@ table th, table td {text-align: left;}
 .row:before, .row:after {content: ""; display: block; height: 0; overflow: hidden; visibility: hidden;}
 .row:after {clear: both;}
 
+<<<<<<< HEAD
 /* Defaults */
 .button, a.button {
 	float: left;
@@ -238,6 +252,8 @@ hr{border-top: medium double #c4c4c4;}
 /* Foter */
 footer{margin: 5px 40px;}
 
+=======
+>>>>>>> parent of c288e3b... basic page template
 /********************************************************************************
 			CLEARING ELEMENTS THAT CONTAIN FLOATED ELEMENTS
 ********************************************************************************/

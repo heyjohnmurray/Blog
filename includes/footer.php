@@ -1,9 +1,8 @@
-<br class="clear" />
 <footer>
 	<div class="container">
 		<div class="row">
 			<div class="box-16">
-				<!-- footer content goes here -->
+				footer
 			</div><!--/.box-16-->
 		</div><!--/.row-->
 	</div><!--/.container-->
