@@ -2,7 +2,6 @@
 	require_once('../_db_connect.php');
 	$page = "posts-page";	
 	$title = "List of posts";
-	$query = "";
 	require_once('includes/header.php'); 
 	
 	$query = "SELECT * FROM posts";

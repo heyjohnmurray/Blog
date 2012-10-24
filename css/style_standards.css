@@ -192,11 +192,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-.errors{display: none; background: #d00; color: #fff; margin: 10px 0px; font-weight: bold; padding: 5px 10px;}
-.input-error{border: 1px solid #d00;}
-.success{display: none; background: #20bb3a;}
-
-input[type=text]:focus, textarea:focus{
+input:focus, textarea:focus{
 	-webkit-box-shadow:  0px 0px 5px 0px #ff5300;
 	box-shadow:  0px 0px 5px 0px #ff5300;
 	outline-color: #ff5300;
@@ -204,7 +200,7 @@ input[type=text]:focus, textarea:focus{
 	-moz-transition: all .15s ease-in-out;
 	transition: all .15s ease-in-out;
 }
-input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4; font-size: 20px;}
+input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4;}
 
 p{font-size: 18px; font-weight: 300;}
 
@@ -235,9 +231,9 @@ hr{border-top: medium double #c4c4c4;}
 /* Add Templates */
 .centered-content{float: none; margin: 20px auto;}
 
-.admin-form{/* width: 500px;  */margin: 10px auto;}
+.admin-form{/* width: 500px;  */margin: 20px auto;}
 .admin-form label{width: 100%; display: block;}
-.admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px;}
+.admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px; font-size: 20px;}
 .admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 .admin-form textarea{height: 200px;}
 /* Sidebar */

@@ -15,7 +15,6 @@
 			<div class="row">
 				<div class="box-10 centered-content">
 					<h1>Add a Post</h1>
-
 					<div class="errors" id="errors">
 						<script type="text/javascript">
 							$(function() {
@@ -45,13 +44,13 @@
 							});								
 						</script>						
 					</div>
-					<form action="add-post-post2.php" method="post" name="add-post" class="admin-form add-post">						
-						<label for="post_title">Title</label>
-						<input type="text" name="post_title" value="" class="post-title" />
-						<label for="post_subhead">Subhead <span class="optional">(Optional)</span></label>
-						<input type="text" name="post_subhead" value="" class="post-subhead" />
-						<label for="post_content">Content</label>
-						<textarea name="post_content" class="post-content"></textarea>
+					<form action="" method="post" name="add-post" class="admin-form add-post">						
+						<label for="post-name">Title</label>
+						<input type="text" name="post-title" value="" class="post-title" />
+						<label for="post-subhead">Subhead <span class="optional">(Optional)</span></label>
+						<input type="text" name="post-subhead" value="" class="post-subhead" />
+						<label for="post-content">Content</label>
+						<textarea name="post-content" class="post-content"></textarea>
 						<input type="submit" class="submit button round3px float-right" value="Post!" />
 					</form>
 				</div><!-- close left content -->
