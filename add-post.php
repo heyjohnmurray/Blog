@@ -2,6 +2,8 @@
 	require_once('../_db_connect.php');
 	$page = "add-post-page";	
 	$title = "Add a Post";
+	session_start();
+	
 	require_once('includes/header.php'); 
 ?>
 	<section id="content">
@@ -9,9 +11,8 @@
 			<div class="row">
 				<div class="box-10 centered-content">
 					<h1>Add a Post</h1>
-					<?									
-						session_start();	
-						//print_r($_SESSION['errors']); //use this if the form isn't validating right
+					<?															
+						//print_r($_SESSION); //use this if the form isn't validating right
 					?>
 					<p class="errors" id="errors">
 						<?															
@@ -21,7 +22,7 @@
 									$(function() {
 										setTimeout(function(){
 											$("#errors").fadeIn(500);
-											alert('Find out how to add class to highlight inputs, too!');											
+											//alert('Find out how to add class to highlight inputs, too!');											
 										}, 500)
 									//close jquery	
 									});								
@@ -65,3 +66,9 @@
 </div>
 </body>
 </html>
+
+<!--
+	after talking to brian you learned that:
+	any page that needs to use a session variable has to have session_start() at the top
+	see post file for notes as well
+-->
