@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 
 <head>
-<title></title>
+<title><?= $title ?></title>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!--[if IE]>
@@ -32,8 +32,8 @@
 				<div class="box-8"><img src="images/logo.jpg" width="370" height="80" alt="" class="logo" /></div>
 				<div class="box-8"></div>
 			</div>
-		<div class="box-16">
-			<? include_once("includes/_main_nav.php"); ?>
-		</div><!--/.box-16-->
+			<div class="row">
+				<? include_once("includes/_main_nav.php"); ?>
+			</div>
 	</header>
-	
+	<br class="clear" />
