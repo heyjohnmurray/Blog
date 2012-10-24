@@ -44,6 +44,7 @@ hr {
 }
 p:last-child {margin-bottom: 0;}
 input, select {vertical-align: middle;}
+input[type=button], input[type=submit], button {cursor: pointer; border: 0;}
 .float-left {float: left;}
 .float-right {float: right;}
 .center {text-align: center;}
@@ -151,32 +152,21 @@ table th, table td {text-align: left;}
 .row:after {clear: both;}
 
 /* Defaults */
-.round3px{-webkit-border-radius: 3px; border-radius: 3px;}
-
-.button{
-	padding: 10px 25px;
+.button, a.button {
+	float: left;
+	height: 30px;
+	padding: 10px 25px 0;
 	color: #fff;
-	font-weight: 300;
-	font-size: 18px;
-	border: none;
-	text-align: center;
-	margin: 15px 0px;
-	-webkit-box-shadow: inset 0px 2px 0px 0px #4b9eec;
-    box-shadow: inset 0px 2px 0px 0px #4b9eec;
-	background: #0170d9;
-	background: -moz-linear-gradient(top,  #0170d9 0%, #016dd2 43%, #026acd 55%, #005eb5 90%, #025cb4 98%, #0164c1 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0170d9), color-stop(43%,#016dd2), color-stop(55%,#026acd), color-stop(90%,#005eb5), color-stop(98%,#025cb4), color-stop(100%,#0164c1));
-	background: -webkit-linear-gradient(top,  #0170d9 0%,#016dd2 43%,#026acd 55%,#005eb5 90%,#025cb4 98%,#0164c1 100%);
-	background: -o-linear-gradient(top,  #0170d9 0%,#016dd2 43%,#026acd 55%,#005eb5 90%,#025cb4 98%,#0164c1 100%);
-	background: -ms-linear-gradient(top,  #0170d9 0%,#016dd2 43%,#026acd 55%,#005eb5 90%,#025cb4 98%,#0164c1 100%);
-	background: linear-gradient(to bottom,  #0170d9 0%,#016dd2 43%,#026acd 55%,#005eb5 90%,#025cb4 98%,#0164c1 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0170d9', endColorstr='#0164c1',GradientType=0 );
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	background: #464646 url(../images/bg_stripes.png) repeat;
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	margin-right: 20px;
 }
-
-.button:hover{
-	cursor: pointer;
-	background: #0170D9;
-}
+.button:hover, a.button:hover {background-color: #252525;}
 
 /***********************************
 Main Stylesheet
@@ -192,25 +182,18 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-input:focus, textarea:focus{
-	-webkit-box-shadow:  0px 0px 5px 0px #ff5300;
-	box-shadow:  0px 0px 5px 0px #ff5300;
-	outline-color: #ff5300;
-	-webkit-transition: all .15s ease-in-out;
-	-moz-transition: all .15s ease-in-out;
-	transition: all .15s ease-in-out;
-}
-input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4;}
-
 p{font-size: 18px; font-weight: 300;}
 
 /* Typography */
 h1{color: #ff5300; font-size: 40px; font-weight: 300; padding-bottom: 20px; border-bottom: medium double #c4c4c4}
 h2{color: #0170d8; font-size: 30px; font-weight: 300; padding-bottom: 20px;}
 
+article h2{color: #2b2b2b; font-size: 30px; font-weight: 300;}
+article h3{color: #484849; font-size: 20px; font-weight: 300;}
+article time{color: #737475; font-size: 16px; font-weight: 300;}
+
 .wrapper{background: #f9f9f9; width: 960px; margin: 0px auto;}
 .logo{margin: 40px 0px 0px 40px;}
-.optional{font-size: 11px;}
 
 /* Nav */
 nav{border-top: 1px solid #c4c4c4; border-bottom: 1px solid #c4c4c4; margin: 5px 40px;}
@@ -221,21 +204,9 @@ nav li {margin: 5px 0px 5px 20px;}
 .wrapper .left-content{float: left; margin: 0px 20px 0px 40px; padding: 20px 0px;}
 
 article{border-bottom: medium double #c4c4c4; margin: 10px 0px; padding: 10px 0px 20px 0px;}
-	article h2{color: #2b2b2b; font-size: 30px; font-weight: 300; padding: 0px 0px 10px 0px;}
-	article h3{color: #484849; font-size: 20px; font-weight: 300;}
-	article time{display: block; color: #737475; font-size: 16px; font-weight: 300; padding: 0px 0px 20px 0px;}
-	article a.read-more{color: #ff5300;}
 
 hr{border-top: medium double #c4c4c4;}
 
-/* Add Templates */
-.centered-content{float: none; margin: 20px auto;}
-
-.admin-form{/* width: 500px;  */margin: 20px auto;}
-.admin-form label{width: 100%; display: block;}
-.admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px; font-size: 20px;}
-.admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-.admin-form textarea{height: 200px;}
 /* Sidebar */
 .wrapper .right-content{float: right; margin: 0px 40px 0px 20px; padding: 20px 0px;}
 
