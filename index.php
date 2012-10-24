@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <? require_once('includes/header.php'); ?>
+=======
+<?
+	require_once('../_db_connect.php');
+	$page = "posts-page";	
+	$title = "List of posts";
+	require_once('includes/header.php'); 
+?>
+>>>>>>> parent of 2f989d6... Final Commit of the night
 	<section id="content">
 		<div class="box-16">
 			<div class="row">
