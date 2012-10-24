@@ -24,11 +24,6 @@
 <script src="js/modernizr.js"></script>
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 
-<<<<<<< HEAD
-</head>
-=======
-</head>
-
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
@@ -40,9 +35,8 @@
 				<div class="box-8"><img src="images/logo.jpg" width="370" height="80" alt="" class="logo" /></div>
 				<div class="box-8"></div>
 			</div>
-			<div class="row">
-				<? include_once("includes/_main_nav.php"); ?>
-			</div><!--/.row-->
+		<div class="box-16">
+			<? include_once("includes/_main_nav.php"); ?>
 		</div><!--/.box-16-->
 	</header>
->>>>>>> parent of 8ab04ba... update page templates
+	
