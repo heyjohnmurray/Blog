@@ -35,5 +35,6 @@
 			<div class="row">
 				<? include_once("includes/_main_nav.php"); ?>
 			</div>
+		</div>		
 	</header>
 	<br class="clear" />

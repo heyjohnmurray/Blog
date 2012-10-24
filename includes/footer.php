@@ -11,10 +11,3 @@
 
 <!--Scripts-->
 <script src="js/styles.js"></script>
-
-<!--[if lt IE 9 ]>
-<script>
-Placeholder.init();
-</script>
-<![endif]-->
-
