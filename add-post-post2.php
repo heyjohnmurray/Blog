@@ -9,19 +9,19 @@
 	if(empty($_POST['post-title'])){
 		$errors[] = "Please enter a title for this post. <br />";
 	} else{
-		$post_title = mysqli_real_escae_string($_POST['post-title']);
+		$post_title = $_POST['post-title'];
 	}
 	
 	//post-subhead validation
 	if(!empty($_POST['post-subhead'])){
-		$post_subhead = mysqli_real_escae_string($_POST['post-subhead']);
+		$post_subhead = $_POST['post-subhead'];
 	}
 	
 	//post-content validation
 	if(empty($_POST['post-content'])){
 		$errors[] = "Please enter content for this post.";
 	} else{
-		$post_content = mysqli_real_escae_string($_POST['post-content']);
+		$post_content = $_POST['post-content'];
 	}
 	
 	if(empty($errors)){//if validation is ok then create query
