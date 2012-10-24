@@ -159,6 +159,10 @@ table th, table td {text-align: left;}
 .row:before, .row:after {content: ""; display: block; height: 0; overflow: hidden; visibility: hidden;}
 .row:after {clear: both;}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 9904169... finally getting back on track
 /* Defaults */
 .button, a.button {
 	float: left;
@@ -190,6 +194,15 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 2f989d6... Final Commit of the night
+>>>>>>> parent of 9904169... finally getting back on track
 input:focus, textarea:focus{
 	-webkit-box-shadow:  0px 0px 5px 0px #ff5300;
 	box-shadow:  0px 0px 5px 0px #ff5300;
@@ -200,6 +213,12 @@ input:focus, textarea:focus{
 }
 input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4;}
 
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 2f989d6... Final Commit of the night
+=======
+>>>>>>> parent of 8ab04ba... update page templates
+>>>>>>> parent of 9904169... finally getting back on track
 p{font-size: 18px; font-weight: 300;}
 
 /* Typography */
@@ -225,6 +244,12 @@ article{border-bottom: medium double #c4c4c4; margin: 10px 0px; padding: 10px 0p
 
 hr{border-top: medium double #c4c4c4;}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 9904169... finally getting back on track
 /* Add Templates */
 .centered-content{float: none; margin: 20px auto;}
 
@@ -233,7 +258,13 @@ hr{border-top: medium double #c4c4c4;}
 .admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px; font-size: 20px;}
 .admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 .admin-form textarea{height: 200px;}
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 2f989d6... Final Commit of the night
+=======
+>>>>>>> parent of 8ab04ba... update page templates
+>>>>>>> parent of 9904169... finally getting back on track
 /* Sidebar */
 .wrapper .right-content{float: right; margin: 0px 40px 0px 20px; padding: 20px 0px;}
 
@@ -241,6 +272,11 @@ hr{border-top: medium double #c4c4c4;}
 /* Foter */
 footer{margin: 5px 40px;}
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of c288e3b... basic page template
+>>>>>>> parent of 9904169... finally getting back on track
 /********************************************************************************
 			CLEARING ELEMENTS THAT CONTAIN FLOATED ELEMENTS
 ********************************************************************************/
