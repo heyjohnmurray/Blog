@@ -13,12 +13,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <![endif]-->
 
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
-<link rel="canonical" href=""/>
+<meta name="robots" content="noindex,nofollow">
 
 <link rel="stylesheet" href="css/box_grid.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="css/style_standards.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="css/style_main.css" type="text/css" media="screen"/>
 
 <script src="js/modernizr.js"></script>

@@ -1,11 +1,170 @@
-/***********************************
-Main Stylesheet
-***********************************/
+/***********************************************
+Standards Stylesheet
+***********************************************/
 
 
-/* Fonts */
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+html {overflow-y: scroll;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
 
 
+/* HTML 5 Fix */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+
+
+/* Defaults */
+hr {
+	display: block;
+	border: 0;
+	height: 2px;
+	background: url(../images/hr_horizontal.png) repeat-x;
+	margin: 0 10px 40px;
+	padding: 0;
+}
+p:last-child {margin-bottom: 0;}
+input, select {vertical-align: middle;}
+input[type=button], input[type=submit], button {cursor: pointer; border: 0;}
+.float-left {float: left;}
+.float-right {float: right;}
+.center {text-align: center;}
+.bold, b, strong {font-weight: bold;}
+.italic, i {font-style: italic;}
+.normal {font-weight: normal;}
+.noselect {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.nomargin {margin: 0;}
+.hide {display: none;}
+.position {position: relative;}
+small {font-size: 11px;}
+
+
+/* Body */
+body {
+	font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	color: #707070;
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+	color: #363636;
+	margin-bottom: 20px;
+}
+a:link, a:visited, a:active, a {
+	text-decoration: none;
+	color: #d00d00;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+	outline: none;
+	}
+a:hover {color: #252525;}
+p {margin: 0 0 15px 0;}
+p.large {font-size: 18px; line-height:30px; color: #464646; margin-bottom: 30px;}
+
+
+/* Effects */
+.shadow {
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.glow {
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.rounded {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.fade {
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	-ms-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  	filter: alpha(opacity=100);
+  	-moz-opacity: 1.0;
+  	-khtml-opacity: 1.0;
+  	opacity: 1.0;
+}
+.fade:hover {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  	filter: alpha(opacity=60);
+  	-moz-opacity: 0.6;
+  	-khtml-opacity: 0.6;
+  	opacity: 0.6;
+}
+
+
+/* Lists */
+ul li {margin-bottom: 10px;}
+ul.disc {list-style-type: disc; margin-left: 20px;}
+ul.square {list-style-type: square; margin-left: 20px;}
+
+
+/* Spacing */
+.top10 {margin-top: 10px;}
+.top20 {margin-top: 20px;}
+.top30 {margin-top: 30px;}
+.top40 {margin-top: 40px;}
+.bottom10 {margin-bottom: 10px;}
+.bottom20 {margin-bottom: 20px;}
+.bottom30 {margin-bottom: 30px;}
+.bottom40 {margin-bottom: 40px;}
+
+
+/* Placeholder Styles */
+::-webkit-input-placeholder {color: #636363;}
+:-moz-placeholder {color: #636363;}
+
+
+/* Text Select */
+::selection {background: #464646; color: #fff;}
+::-moz-selection {background: #464646; color: #fff;}
+
+
+/* Tables */
+table {width: 100%;}
+table th, table td {text-align: left;}
+
+
+/* Clearing */
+.clear {clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0;}
+.row:before, .row:after {content: ""; display: block; height: 0; overflow: hidden; visibility: hidden;}
+.row:after {clear: both;}
+
+<<<<<<< HEAD
 /* Defaults */
 .button, a.button {
 	float: left;
@@ -23,10 +182,99 @@ Main Stylesheet
 }
 .button:hover, a.button:hover {background-color: #252525;}
 
+/***********************************
+Main Stylesheet
+***********************************/
+/* Body */
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 28px;
+	color: #484849;
+	background: url(../images/bkg.jpg);
+	-webkit-font-smoothing: antialiased;
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 2f989d6... Final Commit of the night
+input:focus, textarea:focus{
+	-webkit-box-shadow:  0px 0px 5px 0px #ff5300;
+	box-shadow:  0px 0px 5px 0px #ff5300;
+	outline-color: #ff5300;
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+}
+input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4;}
+
+>>>>>>> parent of 2f989d6... Final Commit of the night
+=======
+>>>>>>> parent of 8ab04ba... update page templates
+p{font-size: 18px; font-weight: 300;}
 
 /* Typography */
+h1{color: #ff5300; font-size: 40px; font-weight: 300; padding-bottom: 20px; border-bottom: medium double #c4c4c4}
+h2{color: #0170d8; font-size: 30px; font-weight: 300; padding-bottom: 20px;}
 
+article h2{color: #2b2b2b; font-size: 30px; font-weight: 300;}
+article h3{color: #484849; font-size: 20px; font-weight: 300;}
+article time{color: #737475; font-size: 16px; font-weight: 300;}
+
+.wrapper{background: #f9f9f9; width: 960px; margin: 0px auto;}
+.logo{margin: 40px 0px 0px 40px;}
 
 /* Nav */
-nav li {margin-bottom: 0;}
+nav{border-top: 1px solid #c4c4c4; border-bottom: 1px solid #c4c4c4; margin: 5px 40px;}
+nav li:first-child{}
+nav li {margin: 5px 0px 5px 20px;}
 
+/* Main Content */
+.wrapper .left-content{float: left; margin: 0px 20px 0px 40px; padding: 20px 0px;}
+
+article{border-bottom: medium double #c4c4c4; margin: 10px 0px; padding: 10px 0px 20px 0px;}
+
+hr{border-top: medium double #c4c4c4;}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/* Add Templates */
+.centered-content{float: none; margin: 20px auto;}
+
+.admin-form{/* width: 500px;  */margin: 20px auto;}
+.admin-form label{width: 100%; display: block;}
+.admin-form input[type=text], .admin-form input[type=password]{margin: 5px 0px; padding: 10px 5px; font-size: 20px;}
+.admin-form input[type=text], .admin-form input[type=password], .admin-form textarea {width: 100%; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.admin-form textarea{height: 200px;}
+>>>>>>> parent of 2f989d6... Final Commit of the night
+=======
+>>>>>>> parent of 8ab04ba... update page templates
+/* Sidebar */
+.wrapper .right-content{float: right; margin: 0px 40px 0px 20px; padding: 20px 0px;}
+
+
+/* Foter */
+footer{margin: 5px 40px;}
+
+=======
+>>>>>>> parent of c288e3b... basic page template
+/********************************************************************************
+			CLEARING ELEMENTS THAT CONTAIN FLOATED ELEMENTS
+********************************************************************************/
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
