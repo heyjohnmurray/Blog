@@ -5,33 +5,31 @@
 	$errors = array();
 	$success = "Your post has been published!";		
 	
-	//post title validation
+	
 	if(empty($_POST['post-title'])){
 		$errors[] = "Please enter a title for this post. <br />";
 	} else{
 		$post_title = $_POST['post-title'];
 	}
-	
-	//post-subhead validation
+		
 	if(!empty($_POST['post-subhead'])){
 		$post_subhead = $_POST['post-subhead'];
 	}
 	
-	//post-content validation
 	if(empty($_POST['post-content'])){
-		$errors[] = "Please enter content for this post.";
+		$errors[] = "Please enter content for this post. <br />";
 	} else{
 		$post_content = $_POST['post-content'];
 	}
 	
-	if(empty($errors)){//if validation is ok then create query
+	if(empty($errors)){
 		
 		$query = "INSERT INTO posts (`post-title`, `post-subhead`, `post-content`) VALUES ('$post_title','$post_subhead','$post_content')";			
 		$result = mysqli_query($dbconnect, $query);
 		
 		header("Location: add-post.php");
 		
-		if($result){//if the query ran successfully
+		if($result){
 			echo $success;
 		} else {
 			$errors[] = "Sorry, the following error(s) occurred " . mysqli_error($dbconnect) . ".";
@@ -40,7 +38,7 @@
 		mysqli_close($dbconnect);
 		
 	} else{
-		$errors[] = "We were unable to publish your post. The following error(s) occurred " . mysqli_error($dbconnect) . ".";
+		$errors[] = "We were unable to publish your post. The following error(s) occurred " . mysqli_error($dbconnect) . ".";		
 	}		
 			
 	$_SESSION['success'] = $success;						
