@@ -1,5 +1,10 @@
 <?
 	require_once('../_db_connect.php');
+	require_once('includes/_functions.php');
+
+	$query = "SELECT * FROM posts LIMIT 5";
+	$result = mysqli_query($dbconnect, $query);	
+	
 	$page = "posts-page";	
 	$title = "List of posts";
 	require_once('includes/header.php'); 
@@ -8,17 +13,26 @@
 	<div class="box-16">
 		<div class="row">
 			<div class="box-10 left-content">
-				<h1>Recent Posts</h1>
+				<h1>Recent Posts</h1>	
+				
+			<?
+				while($row = mysqli_fetch_array($result)){
+			?>
 				<article>
 					<hgroup>
-						<h2>Post One Header</h2>							
-						<h3>Subhead</h3>
-						<h4>Posted on December, 08, 2012</h4>
-					</hgroup>						
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
-				</article>					
+						<h2><?= strip_tags($row['post-title']); ?></h2>
+						<h3><?= strip_tags($row['post-subhead']); ?></h3>
+						<!-- <h4><?= strip_tags(date_format(new DateTime($row['post-date']), 'F d, Y')); ?></h4> either this way or as shown below -->
+						<h4>Posted on <?= date('F d, Y', strtotime($row['post-date'])); ?> at <?= date('h:i', strtotime($row['post-date'])); ?></h4>
+					</hgroup>
+					<p><?= strip_tags($row['post-content']); ?></p>
+					<p><a href="/<? echo create_link($row['post-title']); ?>.php">Read More &#8250;</a></p>
+				</article>
+			<?
+				}
+			?>								
 			</div><!-- close left content -->
-
+			
 			<div class="box-4 right-content">
 				<aside>
 					<h2>About Us</h2>

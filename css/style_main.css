@@ -1,3 +1,9 @@
+/*
+	@font-face: Lato
+	font-weight: 300; Book
+	font-weight: 400; Normal
+*/
+
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -76,31 +82,6 @@ small {font-size: 11px;}
 .input-error{border: 1px solid #d00;}
 .success{display: none; background: #20bb3a;}
 .round3px{-webkit-border-radius: 3px; border-radius: 3px;}
-
-/* Body */
-body {
-	font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	line-height: 28px;
-	color: #707070;
-	background: #fff;
-	-webkit-font-smoothing: antialiased;
-}
-
-
-a:link, a:visited, a:active, a {
-	text-decoration: none;
-	color: #d00d00;
-	-webkit-transition: all 0.15s ease-in-out;
-	-moz-transition: all 0.15s ease-in-out;
-	-o-transition: all 0.15s ease-in-out;
-	transition: all 0.15s ease-in-out;
-	outline: none;
-	}
-a:hover {color: #252525;}
-p {margin: 0 0 15px 0;}
-p.large {font-size: 18px; line-height:30px; color: #464646; margin-bottom: 30px;}
-
 
 /* Effects */
 .shadow {
@@ -210,7 +191,19 @@ input:focus, textarea:focus{
 }
 input[type=text], input[type=password], textarea{border: 1px solid #C4C4C4;}
 
-p{font-size: 18px; font-weight: 300;}
+p{font-size: 18px; font-weight: 300; margin: 15px 0px;}
+
+a:link, a:visited, a:active, a {
+	text-decoration: none;
+	color: #ff5300;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+	outline: none;
+	font-weight: 400;
+	}
+a:hover {color: #252525;}
 
 /* Typography */
 h1{color: #ff5300; font-size: 40px; font-weight: 300; padding-bottom: 10px; border-bottom: medium double #c4c4c4}

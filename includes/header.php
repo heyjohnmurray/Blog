@@ -17,6 +17,7 @@
 
 <link rel="stylesheet" href="css/box_grid.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="css/style_main.css" type="text/css" media="screen"/>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 
 <script src="js/modernizr.js"></script>
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
