@@ -2,7 +2,7 @@
 	require_once('../_db_connect.php');
 	require_once('includes/_functions.php');
 
-	$query = "SELECT * FROM posts LIMIT 5";
+	$query = "SELECT * FROM posts LIMIT 10";
 	$result = mysqli_query($dbconnect, $query);	
 	
 	$page = "posts-page";	
@@ -20,13 +20,13 @@
 			?>
 				<article>
 					<hgroup>
-						<h2><?= strip_tags($row['post-title']); ?></h2>
-						<h3><?= strip_tags($row['post-subhead']); ?></h3>
+						<h2><?= strip_tags($row['postTitle']); ?></h2>
+						<h3><?= strip_tags($row['postSubhead']); ?></h3>
 						<!-- <h4><?= strip_tags(date_format(new DateTime($row['post-date']), 'F d, Y')); ?></h4> either this way or as shown below -->
-						<h4>Posted on <?= date('F d, Y', strtotime($row['post-date'])); ?> at <?= date('h:i', strtotime($row['post-date'])); ?></h4>
+						<h4>Posted on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
 					</hgroup>
-					<p><?= strip_tags($row['post-content']); ?></p>
-					<p><a href="/<? echo create_link($row['post-title']); ?>.php" class="read-more round3px">Read More &#8250;</a></p>
+					<p><?= strip_tags($row['postContent']); ?></p>
+					<p><a href="/<? echo create_link($row['postTitle']); ?>.php" class="read-more round3px">Read More &#8250;</a></p>
 				</article>
 			<?
 				}
