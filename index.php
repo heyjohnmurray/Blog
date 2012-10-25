@@ -26,7 +26,7 @@
 						<h4>Posted on <?= date('F d, Y', strtotime($row['post-date'])); ?> at <?= date('h:i', strtotime($row['post-date'])); ?></h4>
 					</hgroup>
 					<p><?= strip_tags($row['post-content']); ?></p>
-					<p><a href="/<? echo create_link($row['post-title']); ?>.php">Read More &#8250;</a></p>
+					<p><a href="/<? echo create_link($row['post-title']); ?>.php" class="read-more round3px">Read More &#8250;</a></p>
 				</article>
 			<?
 				}

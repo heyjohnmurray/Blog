@@ -41,7 +41,8 @@ hr {
 }
 p:last-child {margin-bottom: 0;}
 input, select {vertical-align: middle;}
-input[type=button], input[type=submit], button {border: 0;
+a.read-more{margin: 5px 0px 10px 0px; display: inline-block;}
+input[type=button], input[type=submit], button, a.read-more {border: 0;
 	background: rgb(1,112,217);
 	background: -moz-linear-gradient(top,  rgba(1,112,217,1) 0%, rgba(1,109,210,1) 43%, rgba(2,106,205,1) 55%, rgba(0,94,181,1) 90%, rgba(2,92,180,1) 98%, rgba(1,100,193,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(1,112,217,1)), color-stop(43%,rgba(1,109,210,1)), color-stop(55%,rgba(2,106,205,1)), color-stop(90%,rgba(0,94,181,1)), color-stop(98%,rgba(2,92,180,1)), color-stop(100%,rgba(1,100,193,1)));
@@ -51,7 +52,7 @@ input[type=button], input[type=submit], button {border: 0;
 	background: linear-gradient(to bottom,  rgba(1,112,217,1) 0%,rgba(1,109,210,1) 43%,rgba(2,106,205,1) 55%,rgba(0,94,181,1) 90%,rgba(2,92,180,1) 98%,rgba(1,100,193,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0170d9', endColorstr='#0164c1',GradientType=0 );
 }
-input[type=button]:hover, input[type=submit]:hover, button:hover{cursor: pointer; 
+input[type=button]:hover, input[type=submit]:hover, button:hover, a.read-more:hover{cursor: pointer; 
 	background: rgb(1,100,193);
 	background: -moz-linear-gradient(top,  rgba(1,100,193,1) 0%, rgba(2,92,180,1) 2%, rgba(0,94,181,1) 10%, rgba(2,106,205,1) 45%, rgba(1,109,210,1) 57%, rgba(1,112,217,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(1,100,193,1)), color-stop(2%,rgba(2,92,180,1)), color-stop(10%,rgba(0,94,181,1)), color-stop(45%,rgba(2,106,205,1)), color-stop(57%,rgba(1,109,210,1)), color-stop(100%,rgba(1,112,217,1)));
@@ -158,7 +159,7 @@ table th, table td {text-align: left;}
 .row:after {clear: both;}
 
 /* Defaults */
-.button, a.button {
+.button, a.button, a.read-more {
 	padding: 10px 15px;
 	color: #fff;
 	font-weight: bold;
@@ -195,7 +196,6 @@ p{font-size: 18px; font-weight: 300; margin: 15px 0px;}
 
 a:link, a:visited, a:active, a {
 	text-decoration: none;
-	color: #ff5300;
 	-webkit-transition: all 0.15s ease-in-out;
 	-moz-transition: all 0.15s ease-in-out;
 	-o-transition: all 0.15s ease-in-out;
@@ -203,7 +203,7 @@ a:link, a:visited, a:active, a {
 	outline: none;
 	font-weight: 400;
 	}
-a:hover {color: #252525;}
+a:hover {cursor: pointer;}
 
 /* Typography */
 h1{color: #ff5300; font-size: 40px; font-weight: 300; padding-bottom: 10px; border-bottom: medium double #c4c4c4}
