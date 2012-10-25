@@ -47,14 +47,14 @@
 							}
 						?>
 					</p>
-					<form action="add-post-post2.php" method="post" name="add-post" class="admin-form add-post">						
+					<form action="add-post-post2.php" method="post" class="admin-form add-post">						
 						<label for="post-title">Title</label>
 						<input type="text" name="post-title" value="" class="post-title" />
 						<label for="post-subhead">Subhead <span class="optional">(Optional)</span></label>
 						<input type="text" name="post-subhead" value="" class="post-subhead" />
 						<label for="post-content">Content</label>
 						<textarea name="post-content" class="post-content"></textarea>
-						<input type="submit" class="submit button round3px float-right" value="Post!" />
+						<input type="submit" class="submit button round3px float-right" name="add-post" value="Post!" />
 					</form>
 				</div><!-- close left content -->
 			</div><!-- close row -->

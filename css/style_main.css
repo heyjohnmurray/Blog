@@ -68,6 +68,7 @@ input[type=button]:hover, input[type=submit]:hover, button:hover, a.read-more:ho
 .bold, b, strong {font-weight: bold;}
 .italic, i {font-style: italic;}
 .normal {font-weight: normal;}
+.optional{font-size: 12px;}
 .noselect {
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -202,6 +203,7 @@ a:link, a:visited, a:active, a {
 	transition: all 0.15s ease-in-out;
 	outline: none;
 	font-weight: 400;
+	font-size: 18px;
 	}
 a:hover {cursor: pointer;}
 

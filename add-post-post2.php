@@ -5,7 +5,6 @@
 	$errors = array();
 	$success = "Your post has been published!";		
 	
-	
 	if(empty($_POST['post-title'])){
 		$errors[] = "Please enter a title for this post. <br />";
 	} else{
@@ -22,23 +21,29 @@
 		$post_content = $_POST['post-content'];
 	}
 	
+	header("Location: add-post.php");
+	
 	if(empty($errors)){
 		
 		$query = "INSERT INTO posts (`post-title`, `post-subhead`, `post-content`) VALUES ('$post_title','$post_subhead','$post_content')";			
-		$result = mysqli_query($dbconnect, $query);
-		
-		header("Location: add-post.php");
+		$result = mysqli_query($dbconnect, $query);		
 		
 		if($result){
+		
 			echo $success;
+			
 		} else {
-			$errors[] = "Sorry, the following error(s) occurred " . mysqli_error($dbconnect) . ".";
+		
+			$errors[] = "Sorry, the following error(s) occurred while adding your data" . mysqli_error($dbconnect) . ".";
+			
 		}
 		
 		mysqli_close($dbconnect);
 		
 	} else{
-		$errors[] = "We were unable to publish your post. The following error(s) occurred " . mysqli_error($dbconnect) . ".";		
+
+		echo $errors;
+		
 	}		
 			
 	$_SESSION['success'] = $success;						
