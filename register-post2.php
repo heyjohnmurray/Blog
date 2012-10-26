@@ -46,6 +46,13 @@
 		$mailConfirm = $_POST['mailConfirm'];
 	} 
 	
+	if($_POST['mailConfirm'] == "Yes"){
+		$to = "heyjohnmurray@gmail.com";
+		$subject = "You have an email from http://sandbox.heyjohnmurray.com";
+		$message = $_POST['userName']) . " filled out the newsletter signup form. \n" . "His email address is " . $_POST['userEmail'] . ".";
+		mail($to,$subject,$message);
+	}
+	
 	header("Location: register.php");
 	
 	if(empty($errors)){
