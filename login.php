@@ -14,9 +14,9 @@
 						<label for="userName">User Name</label>
 						<input type="text" name="userName" class="user-name" value="" />
 						<label for="password">Password</label>
-						<input type="password" name="password" class="password" />
+						<input type="password" name="password" class="password" />						
+						<input type="submit" class="submit button round3px float-right" name="register-submit" value="Log In!" />						
 						<br class="clear" />
-						<input type="submit" class="submit button round3px float-right" name="register-submit" value="Add New User!" />						
 					</form>
 				</div><!-- close centered content -->
 			</div><!-- close row -->
