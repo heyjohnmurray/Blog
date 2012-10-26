@@ -8,8 +8,16 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 centered-content">
-					<h1>XXTITLEXX</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					<h1>Log In</h1>
+					<? include_once('includes/_validation_msg.html'); ?>
+					<form action="login-post2.php" method="post" class="admin-form login">
+						<label for="userName">User Name</label>
+						<input type="text" name="userName" class="user-name" value="" />
+						<label for="password">Password</label>
+						<input type="password" name="password" class="password" />
+						<br class="clear" />
+						<input type="submit" class="submit button round3px float-right" name="register-submit" value="Add New User!" />						
+					</form>
 				</div><!-- close centered content -->
 			</div><!-- close row -->
 		</div><!--/.box-16-->	

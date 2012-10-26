@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="box-10 centered-content">
 					<h1>Add New User</h1>
-					<? include_once('inlcudes/_validation_msg.html'); ?>
+					<? include_once('includes/_validation_msg.html'); ?>
 					<form action="register-post2.php" method="post" class="admin-form register-user">
 						<label for="userName">User Name <span class="note">(Required)</span></label>
 						<input type="text" name="userName" class="user-name" value="" />

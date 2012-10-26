@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="box-10 centered-content">
 					<h1>Add a Post</h1>
-					<? include_once('inlcudes/_validation_msg.html'); ?>
+					<? include_once('includes/_validation_msg.html'); ?>
 					<form action="add-post-post2.php" method="post" class="admin-form add-post">						
 						<label for="post-title">Title</label>
 						<input type="text" name="post-title" value="" class="post-title" />
