@@ -1,0 +1,38 @@
+<?															
+	//print_r($_SESSION); //use this if the form isn't validating right
+?>
+<p class="errors" id="errors">
+	<?															
+		if(!empty($_SESSION['errors'])){
+	?>
+			<script type="text/javascript">
+				$(function() {
+					setTimeout(function(){
+						$("#errors").fadeIn(500);
+						//alert('Find out how to add class to highlight inputs, too!');											
+					}, 500)
+				//close jquery	
+				});								
+			</script>								
+	<?
+			foreach($_SESSION['errors'] as $error){
+				echo $error;
+			}
+			session_unset($_SESSION['errors']);
+		} 
+		
+		if(!empty($_SESSION['success'])){
+	?>
+		<script type="text/javascript">
+			$(function() {
+				setTimeout(function(){
+					$("#errors").fadeIn(500).addClass("success").text("<?= $_SESSION['success'] ?>");
+				}, 500)
+			//close jquery	
+			});								
+		</script>	
+	<?				
+			session_unset($_SESSION['success']);	
+		}
+	?>
+</p>

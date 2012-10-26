@@ -3,12 +3,12 @@
 	require_once('../_db_connect.php');
 	
 	$errors = array();
-	$success = "Your post has been published, BUT YOU STILL NEED TO SANITIZE YOUR DATA USING PREPARED STATEMENTS!!!!";		
+	$success = "Your post has been published!";		
 	
 	if(empty($_POST['post-title'])){
 		$errors[] = "Please enter a title for this post. <br />";
 	} else{
-		$post_title = $_POST['post-title']);
+		$post_title = $_POST['post-title'];
 	}
 		
 	if(!empty($_POST['post-subhead'])){
