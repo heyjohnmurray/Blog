@@ -2,6 +2,7 @@
 	session_start();
 	require_once('../_db_connect.php');
 		
+	
 	$errors = array();
 	$success = "You're registered!";
 	
@@ -40,18 +41,29 @@
 			
 	if(!empty($_POST['userType'])){
 		$userType = $_POST['userType'];
-	}
+/*
+		Summary of User Type Roles
+			Super Admin - Someone with access to the blog network administration features controlling the entire network (See Create a Network).
+			Administrator - Somebody who has access to all the administration features
+			Editor - Somebody who can publish and manage posts and pages as well as manage other users' posts, etc.
+			Author - Somebody who can publish and manage their own posts
+			Contributor - Somebody who can write and manage their posts but not publish them
+			Subscriber - Somebody who can only manage their profile
+*/
+
 	
+	}
 	if(!empty($_POST['mailConfirm'])){
 		$mailConfirm = $_POST['mailConfirm'];
 	} 
-	
+	/* THIS WON'T WORK ON LOCALHOST BECAUSE MAIL ISN'T SET UP
 	if($_POST['mailConfirm'] == "Yes"){
+		
 		$to = "heyjohnmurray@gmail.com";
 		$subject = "You have an email from http://sandbox.heyjohnmurray.com";
 		$message = $_POST['userName']) . " filled out the newsletter signup form. \n" . "His email address is " . $_POST['userEmail'] . ".";
-		mail($to,$subject,$message);
-	}
+		mail($to,$subject,$message);		
+	}*/
 	
 	header("Location: register.php");
 	
@@ -80,7 +92,6 @@
 	}
 	$_SESSION['errors'] = $errors;		
 	$_SESSION['success'] = $success;
-
-						
+			
 	exit();		
 } ?>

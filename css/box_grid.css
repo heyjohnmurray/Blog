@@ -62,13 +62,15 @@ thelifemgmt@gmail.com
 	.box-9, .box-10, .box-11, .box-12, .box-13, .box-14, .box-15, .box-16,
 	.box-3.sixth, .box-5.third, .box-10.two-third{width: 100%; margin: 0 0 20px;}
 	.wrapper .left-content, .wrapper .right-content, nav{margin: 0px !important;}
-	.logo{margin: 20px auto 0px auto !important;}
+	.logo{margin: 10px 0px !important;}
+	.login-links{float: left !important; margin: 0px !important;}
 }
 
 /* iPad */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	.row img {display: block; max-width: 100%; height: auto;}
 	.container {width: 768px; overflow: hidden;}
-	.box-13, .box-14, .box-15, .box-16{width: 748px;}	
+	.box-13, .box-14, .box-15, .box-16{width: 748px;}
 	.wrapper .right-content{float: left !important; width: 580px; margin: 0px 40px !important;}
+	.login-links{float: left !important; margin: 0px 25px !important;}
 }

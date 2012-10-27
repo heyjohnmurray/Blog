@@ -32,4 +32,6 @@
 	after talking to brian you learned that:
 	any page that needs to use a session variable has to have session_start() at the top
 	see post file for notes as well
+	
+	at some point look at this list of text editors to decide which one you'll use for the <textarea>
 -->

@@ -25,6 +25,7 @@
 						<input type="password" name="passwordTwo" class="passwordTwo" />
 						<label for="userType" class="float-left user-type-label">Role</label>
 						<select name="userType" class="float-left">
+							<!-- see this page's post file for userType descriptions -->
 							<option value="subscriber">Subscriber</option>							
 							<option value="author">Author</option>
 						</select>

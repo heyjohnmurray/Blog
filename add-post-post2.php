@@ -27,14 +27,14 @@
 		
 		$query = "INSERT INTO posts (postTitle, postSubhead, postContent) VALUES (?,?,?)";
 		$stmt = mysqli_prepare($dbconnect, $query);
-		mysqli_stmt_bind_param($stmt, "sss", $post_title, $post_subhead, $post_content);
-		if(mysqli_stmt_execute($stmt)){
+		mysqli_bind_param($stmt, "sss", $post_title, $post_subhead, $post_content);
+		if(mysqli_execute($stmt)){
 		
 			echo $success;
 			
 		} else{
 			
-			$errors[] = "Something is wrong with your prepared statement.";
+			$errors[] = "There was a problem creating your post!";
 			
 		}
 		mysqli_stmt_close($stmt);

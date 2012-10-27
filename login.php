@@ -1,7 +1,7 @@
 <?
-	require_once('../_db_connect.php');
 	$page = "login-page";//body tag class
 	$title = "Log in to your Bloggr Account";//title tag text
+	session_start();
 	require_once('includes/header.php'); 
 ?>
 	<section id="content">
@@ -14,7 +14,7 @@
 						<label for="userName">User Name</label>
 						<input type="text" name="userName" class="user-name" value="" />
 						<label for="password">Password</label>
-						<input type="password" name="password" class="password" />						
+						<input type="password" name="password" class="password" />				
 						<input type="submit" class="submit button round3px float-right" name="register-submit" value="Log In!" />						
 						<br class="clear" />
 					</form>

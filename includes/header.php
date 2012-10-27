@@ -31,7 +31,12 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-8"><img src="images/logo.jpg" width="370" height="80" alt="" class="logo" /></div>
-				<div class="box-8"></div>
+				<div class="box-8">
+					<ul class="login-links">
+						<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Login</a></li>
+						<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/register.php">Register</a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="row">
 				<? include_once("includes/_main_nav.php"); ?>

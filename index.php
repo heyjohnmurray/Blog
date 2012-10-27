@@ -25,8 +25,8 @@
 						<!-- <h4><?= strip_tags(date_format(new DateTime($row['post-date']), 'F d, Y')); ?></h4> either this way or as shown below -->
 						<h4>Posted on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
 					</hgroup>
-					<p><?= strip_tags($row['postContent']); ?></p>
-					<p><a href="/<? echo create_link($row['postTitle']); ?>.php" class="read-more round3px">Read More &#8250;</a></p>
+					<p><?= post_preview_length(strip_tags($row['postContent'])); ?></p>
+					<p><a href="post.php?post=<?= strip_tags($row['postId']) ?>" class="read-more round3px">Read More &#8250;</a></p>
 				</article>
 			<?
 				}
