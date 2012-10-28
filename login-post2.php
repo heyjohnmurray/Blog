@@ -12,7 +12,7 @@
 	}
 	
 	if(empty($_POST['password'])){
-		$errors[] = "Please enter a password.";
+		$errors[] = "Please enter a password.<br />";
 	} else{
 		$password = $_POST['password'];
 	}
@@ -24,16 +24,13 @@
 		$result = mysqli_query($dbconnect, $query);		
 		if(mysqli_num_rows($result) == 1){
 			$row = mysqli_fetch_array($result);
-			return array(true, $row);
-			
-		} else{
-			$errors[] = "Please try again!";
+			$success;
+			//return array(true, $row);					
 		}					
-	} 
+	}
 	
+	$_SESSION['success'] = $success;		
 	$_SESSION['errors'] = $errors;
-	$_SESSION['success'] = $success;
-	
 	exit();
 
 } ?>

@@ -8,8 +8,41 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 centered-content">
-					<h1>Log In</h1>
-					<? include_once('includes/_validation_msg.html'); ?>
+					<h1>Log In</h1>										
+					<p class="errors" id="errors">
+						<?															
+							if(!empty($_SESSION['errors'])){
+						?>
+								<script type="text/javascript">
+									$(function() {
+										setTimeout(function(){
+											$("#errors").fadeIn(500);
+											//alert('Find out how to add class to highlight inputs, too!');											
+										}, 500)
+									//close jquery	
+									});								
+								</script>								
+						<?
+								foreach($_SESSION['errors'] as $error){
+									echo $error;
+								}
+								session_unset($_SESSION['errors']);
+							} 
+							
+							if(!empty($_SESSION['success'])){
+								//This isn't totally working. FIX IT!!!
+								$status = "You're logged in!";
+								$_SESSION['status'] = $status;		
+						?>
+							<script type="text/javascript">
+								window.location = "index.php";
+							</script>	
+						<?				
+								//session_unset($_SESSION['success']);	
+							}
+						?>
+					</p>
+					<? //include_once('includes/_validation_msg.html'); ?>
 					<form action="login-post2.php" method="post" class="admin-form login">
 						<label for="userName">User Name</label>
 						<input type="text" name="userName" class="user-name" value="" />

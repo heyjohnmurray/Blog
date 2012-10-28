@@ -33,7 +33,28 @@
 				<div class="box-8"><img src="images/logo.jpg" width="370" height="80" alt="" class="logo" /></div>
 				<div class="box-8">
 					<ul class="login-links">
-						<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Login</a></li>
+						<li>
+							<?
+								//I'M STILL PLAYING WITH THIS LOGIN STATUS SESSION VARIABLE
+								if(!empty($_SESSION['status'])){
+									//THIS IS WRONG AND NOT WORKING
+									/*
+										$logout = $_GET['logout'];
+										if($_GET['logout']){
+											session_unset($_SESSION['status']);
+										}
+									*/
+
+							?>
+								<a href="?logout">Log Out</a>							
+							<?
+								} else{
+							?>
+								<a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Log In</a>
+							<?		
+								}
+							?>
+						</li>	
 						<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/register.php">Register</a></li>
 					</ul>
 				</div>

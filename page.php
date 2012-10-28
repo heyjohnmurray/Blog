@@ -22,7 +22,7 @@
 					<h1><?= strip_tags($row['pageTitle']); ?> <!-- XXPostTitleXX --></h1>
 					<article>
 						<hgroup>
-							<h2><?= strip_tags($row['pageSubhead']); ?></h2>
+							<h2><? if($row['pageSubhead']){ echo strip_tags($row['pageSubhead']);}?></h2>
 							<h3>Posted on <?= date('F d, Y', strip_tags(strtotime($row['pageDate']))); ?> at <?= strip_tags(date('h:i', strtotime($row['pageDate']))); ?></h4>
 						</hgroup>
 						<p><?= strip_tags($row['pageContent']); ?></p>

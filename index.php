@@ -7,22 +7,28 @@
 	
 	$page = "posts-page";	
 	$title = "List of posts";
+	session_start();
 	require_once('includes/header.php'); 
 ?>	
-<section id="content">
+<section id="content">		
 	<div class="box-16">
 		<div class="row">
 			<div class="box-10 left-content">
-				<h1>Recent Posts</h1>	
-				
-			<?
-				while($row = mysqli_fetch_array($result)){
-			?>
+				<h1>Recent Posts</h1>
+				<?
+					if(!empty($_SESSION['status'])){
+				?>
+					<p class="success" style="display:block; color:#fff; padding: 3px 5px;"><?= $_SESSION['status'] ?></p>
+				<?
+					}
+				?>		
+				<?
+					while($row = mysqli_fetch_array($result)){ 
+				?>
 				<article>
 					<hgroup>
 						<h2><?= strip_tags($row['postTitle']); ?></h2>
 						<h3><?= strip_tags($row['postSubhead']); ?></h3>
-						<!-- <h4><?= strip_tags(date_format(new DateTime($row['post-date']), 'F d, Y')); ?></h4> either this way or as shown below -->
 						<h4>Posted on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
 					</hgroup>
 					<p><?= post_preview_length(strip_tags($row['postContent'])); ?></p>
