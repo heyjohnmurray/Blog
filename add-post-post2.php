@@ -28,29 +28,26 @@
 		$query = "INSERT INTO posts (postTitle, postSubhead, postContent) VALUES (?,?,?)";
 		$stmt = mysqli_prepare($dbconnect, $query);
 		mysqli_bind_param($stmt, "sss", $post_title, $post_subhead, $post_content);
-		if(mysqli_execute($stmt)){
-		
-			echo $success;
-			
-		} else{
-			
-			$errors[] = "There was a problem creating your post!";
-			
+
+		if(mysqli_execute($stmt)){		
+			$success;			
+		} else{			
+			$errors[] = "There was a problem creating your post!";	
 		}
-		mysqli_stmt_close($stmt);
 		
+		mysqli_stmt_close($stmt);		
 		mysqli_close($dbconnect);
 		
-	} else{
-
-		echo $errors;
+		$_SESSION['success'] = $success;
+		header("Location: add-post.php");
+		exit();
 		
+	} else{
+		$_SESSION['errors'] = $errors;	
+		header("Location: add-post.php");
+		exit();
 	}		
 			
-	$_SESSION['success'] = $success;						
-	$_SESSION['errors'] = $errors;
-	
-	exit();
 } ?>
 <!-- after talking to brian you learned that all session variables need to be declared after the variable their based on has been created. so in this case $_SESSION['success'] needs to come after $success otherwise you could be sending an empty $_SESSION variable. this was happening on the $errors array. also, had an issue with the header() location. also, realized i need to camelcase all table names from now on or use the weird apostrophe-looking mark to escape the names of my table rows. 
 	

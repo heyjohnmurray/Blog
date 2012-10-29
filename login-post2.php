@@ -32,5 +32,5 @@
 		header("Location: login.php");
 		exit();
 	}
-//make your other post files look like this one at the if(empty($errors)){} else{}
+
 } ?>

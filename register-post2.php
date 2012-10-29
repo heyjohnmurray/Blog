@@ -56,6 +56,7 @@
 	if(!empty($_POST['mailConfirm'])){
 		$mailConfirm = $_POST['mailConfirm'];
 	} 
+	
 	/* THIS WON'T WORK ON LOCALHOST BECAUSE MAIL ISN'T SET UP
 	if($_POST['mailConfirm'] == "Yes"){
 		
@@ -72,26 +73,25 @@
 		$query = "INSERT INTO users (userName, firstName, lastName, userEmail, password, mailConfirm, userType) values(?,?,?,?,?,?,?)"; 		
 		$stmt = mysqli_prepare($dbconnect,  $query);
 		mysqli_stmt_bind_param($stmt, "sssssss", $userName, $firstName, $lastName, $userEmail, SHA1($password), $mailConfirm, $userType);			
-		if(mysqli_stmt_execute($stmt)){
 		
-			echo $success;
-		
-		} else{
-		
-			$errors[] = "Something is wrong with your prepared statement.";
-		
+		if(mysqli_stmt_execute($stmt)){		
+			$success;					
+		} else{		
+			$errors[] = "Something is wrong with your prepared statement.";		
 		}
-		mysqli_stmt_close($stmt);
 		
+		mysqli_stmt_close($stmt);		
 		mysqli_close($dbconnect);
+		
+		$_SESSION['success'] = $success;
+		header("Location: register.php");
 
 	} else{
-		
-		echo $errors;
-		
+	
+		$errors;
+		$_SESSION['errors'] = $errors;		
+		header("Location: register.php");
+		exit();		
 	}
-	$_SESSION['errors'] = $errors;		
-	$_SESSION['success'] = $success;
-			
-	exit();		
+	
 } ?>

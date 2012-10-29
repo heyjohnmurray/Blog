@@ -19,40 +19,33 @@
 		$errors[] = "Please enter content for this page. <br />";
 	} else{
 		$page_content = $_POST['page-content'];
-	}
-	
-	header("Location: add-page.php");
+	}	
 	
 	if(empty($errors)){
 
-		$query = "INSERT INTO pages (pageTitle, pageSubhead, pageContent) VALUES (?,?,?)";		
-	
+		$query = "INSERT INTO pages (pageTitle, pageSubhead, pageContent) VALUES (?,?,?)";			
 		$stmt = mysqli_prepare($dbconnect, $query);
 		mysqli_bind_param($stmt, "sss", $page_title, $page_subhead, $page_content);
 		
 		if(mysqli_execute($stmt)){
-		
-			echo $success;
-			
-		} else{
-			
-			$errors[] = "There was a problem creating your page!";
-			
+			$success;			
+		} else{			
+			$errors[] = "There was a problem creating your page!";			
 		}
 
-		mysqli_stmt_close($stmt);
-		
+		mysqli_stmt_close($stmt);		
 		mysqli_close($dbconnect);
+		
+		$_SESSION['success'] = $success;
+		header("Location: add-page.php");
+		exit();
 		
 	} else{
 
-		echo $errors;
-		
+		$_SESSION['errors'] = $errors;
+		header("Location: add-page.php");
+		exit();
 	}		
 	
-	$_SESSION['success'] = $success;						
-	$_SESSION['errors'] = $errors;
 	
-	exit();
-
 } ?>
