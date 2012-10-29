@@ -22,6 +22,7 @@
 		$result = mysqli_query($dbconnect, $query);		
 		if(mysqli_num_rows($result) == 1){//if username and password match;
 			$row = mysqli_fetch_array($result);
+			$_SESSION['userName'] = $userName;//this will be used throughout the site
 			$_SESSION['loggedIn'] = $loggedIn;		
 			header("Location: admin.php");
 			exit();

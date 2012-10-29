@@ -20,7 +20,7 @@
 				<?
 					while($row = mysqli_fetch_array($result)){
 				?>
-					<h1><?= strip_tags($row['pageTitle']); ?> <!-- XXPostTitleXX --></h1>
+					<h1><?= strip_tags($row['pageTitle']); ?></h1>
 					<article>
 						<hgroup>
 							<h2><? if($row['pageSubhead']){ echo strip_tags($row['pageSubhead']);}?></h2>

@@ -27,9 +27,9 @@
 <![endif]-->
 <body class="<?= $page ?>">
 <?
-	print '<pre>';
+	/*print '<pre>';
 	print_r($_SESSION);
-	print '</pre>';
+	print '</pre>';*/
 ?>
 <div class="wrapper container clearfix">
 	<header role="banner">
