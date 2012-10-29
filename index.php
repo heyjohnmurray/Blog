@@ -34,11 +34,7 @@
 			</div><!-- close left content -->
 			
 			<div class="box-4 right-content">
-				<aside>
-					<h2>About Us</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-				</aside>
+				<? include_once('includes/_sidebar.php'); ?>
 			</div><!-- close .box-4 -->
 		</div><!-- close row -->
 	</div><!--/.box-16-->	

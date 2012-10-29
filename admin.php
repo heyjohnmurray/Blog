@@ -46,8 +46,8 @@
 			</div><!-- close row -->
 		</div><!--/.box-16-->	
 	</section>
-	<? }
-	} else { ?>
+	<? } //close while loop
+	} /*close isset conditional*/ else { ?>
 	<section id="content">
 		<div class="box-16">
 			<div class="row">
@@ -56,7 +56,7 @@
 					<p>You need to <a href="login.php">log in</a> to view this page.</p>
 				</div><!-- close left content -->
 				<div class="box-4 right-content">
-					<aside></aside>
+					<? include_once('includes/_sidebar.php'); ?>
 				</div><!-- close .box-4 -->								
 			</div><!-- close row -->
 		</div><!--/.box-16-->	

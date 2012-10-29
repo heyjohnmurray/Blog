@@ -41,7 +41,7 @@ hr {
 }
 p:last-child {margin-bottom: 0;}
 input, select {vertical-align: middle;}
-a.read-more{margin: 5px 0px 10px 0px; display: inline-block;}
+.wrapper a.read-more{margin: 5px 0px 10px 0px; display: inline-block; color: #fff;}
 input[type=button], input[type=submit], button, a.read-more {border: 0;
 	background: rgb(1,112,217);
 	background: -moz-linear-gradient(top,  rgba(1,112,217,1) 0%, rgba(1,109,210,1) 43%, rgba(2,106,205,1) 55%, rgba(0,94,181,1) 90%, rgba(2,92,180,1) 98%, rgba(1,100,193,1) 100%);
