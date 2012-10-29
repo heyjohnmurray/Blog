@@ -7,6 +7,7 @@
 	
 	$page = "posts-page";	
 	$title = "List of posts";
+	
 	session_start();
 	require_once('includes/header.php'); 
 ?>	

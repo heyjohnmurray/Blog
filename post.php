@@ -1,5 +1,4 @@
 <?
-	//Basic Blog Post Page Template
 	require_once('../_db_connect.php');
 	require_once('includes/_functions.php');
 	
@@ -10,6 +9,8 @@
 	
 	$page = "post-page";	
 	$title = "";
+	
+	session_start();
 	require_once('includes/header.php'); 
 ?>	
 <section id="content">

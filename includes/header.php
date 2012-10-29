@@ -1,9 +1,4 @@
-<?
-	if(isset($_GET['logout'])){
-	   session_destroy();
-	   header( 'Location: login.php' );
-	}
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
@@ -44,13 +39,13 @@
 				<div class="box-8">
 					<ul class="login-links">
 						<?
-							if(empty($_SESSION['success'])){
+							if(empty($_SESSION['loggedIn'])){
 						?>
 								<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Log In</a></li>
 						<?
 							} else{								
 						?>
-								<li><a href="?logout">Log Out</a></li>
+								<li><a href="logout.php">Log Out</a></li>
 						<?
 							}
 						?>						

@@ -2,6 +2,7 @@
 	require_once('../_db_connect.php');
 	$page = "";//body tag class
 	$title = "";//title tag text
+	session_start();
 	require_once('includes/header.php'); 
 ?>
 	<section id="content">

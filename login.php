@@ -10,22 +10,14 @@
 				<div class="box-10 centered-content">
 					<h1>Log In</h1>										
 					<p class="errors" id="errors">
-						<?
-								print '<pre>';
-								print_r($_SESSION);
-								print '</pre>';
-						?>
-					
 						<?															
 							if(!empty($_SESSION['errors'])){
 						?>
 								<script type="text/javascript">
 									$(function() {
 										setTimeout(function(){
-											$("#errors").fadeIn(500);
-											//alert('Find out how to add class to highlight inputs, too!');											
+											$("#errors").fadeIn(500);											
 										}, 500)
-									//close jquery	
 									});								
 								</script>								
 						<?
@@ -33,19 +25,9 @@
 									echo $error;
 								}
 								session_unset($_SESSION['errors']);
-							} 
-							
-							if(!empty($_SESSION['success'])){
-								echo $_SESSION['success'];
-								//This isn't totally working. FIX IT!!!
-								//$status = "You're logged in!";
-								//$_SESSION['status'] = $status;		
-								
-								//session_unset($_SESSION['success']);	
-							}
+							} 							
 						?>
-					</p>
-					<? //include_once('includes/_validation_msg.html'); ?>
+					</p>					
 					<form action="login-post2.php" method="post" class="admin-form login">
 						<label for="userName">User Name</label>
 						<input type="text" name="userName" class="user-name" value="" />
