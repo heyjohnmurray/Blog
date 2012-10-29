@@ -14,14 +14,7 @@
 	<div class="box-16">
 		<div class="row">
 			<div class="box-10 left-content">
-				<h1>Recent Posts</h1>
-				<?
-					if(!empty($_SESSION['status'])){
-				?>
-					<p class="success" style="display:block; color:#fff; padding: 3px 5px;"><?= $_SESSION['status'] ?></p>
-				<?
-					}
-				?>		
+				<h1>Recent Posts</h1>				
 				<?
 					while($row = mysqli_fetch_array($result)){ 
 				?>
@@ -34,9 +27,9 @@
 					<p><?= post_preview_length(strip_tags($row['postContent'])); ?></p>
 					<p><a href="post.php?post=<?= strip_tags($row['postId']) ?>" class="read-more round3px">Read More &#8250;</a></p>
 				</article>
-			<?
-				}
-			?>								
+				<?
+					}
+				?>								
 			</div><!-- close left content -->
 			
 			<div class="box-4 right-content">

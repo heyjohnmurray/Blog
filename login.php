@@ -10,6 +10,12 @@
 				<div class="box-10 centered-content">
 					<h1>Log In</h1>										
 					<p class="errors" id="errors">
+						<?
+								print '<pre>';
+								print_r($_SESSION);
+								print '</pre>';
+						?>
+					
 						<?															
 							if(!empty($_SESSION['errors'])){
 						?>
@@ -30,14 +36,11 @@
 							} 
 							
 							if(!empty($_SESSION['success'])){
+								echo $_SESSION['success'];
 								//This isn't totally working. FIX IT!!!
-								$status = "You're logged in!";
-								$_SESSION['status'] = $status;		
-						?>
-							<script type="text/javascript">
-								window.location = "index.php";
-							</script>	
-						<?				
+								//$status = "You're logged in!";
+								//$_SESSION['status'] = $status;		
+								
 								//session_unset($_SESSION['success']);	
 							}
 						?>

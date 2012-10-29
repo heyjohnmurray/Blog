@@ -26,6 +26,11 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
 <body class="<?= $page ?>">
+<?
+	print '<pre>';
+	print_r($_SESSION);
+	print '</pre>';
+?>
 <div class="wrapper container clearfix">
 	<header role="banner">
 		<div class="box-16">
@@ -33,28 +38,17 @@
 				<div class="box-8"><img src="images/logo.jpg" width="370" height="80" alt="" class="logo" /></div>
 				<div class="box-8">
 					<ul class="login-links">
-						<li>
-							<?
-								//I'M STILL PLAYING WITH THIS LOGIN STATUS SESSION VARIABLE
-								if(!empty($_SESSION['status'])){
-									//THIS IS WRONG AND NOT WORKING
-									/*
-										$logout = $_GET['logout'];
-										if($_GET['logout']){
-											session_unset($_SESSION['status']);
-										}
-									*/
-
-							?>
-								<a href="?logout">Log Out</a>							
-							<?
-								} else{
-							?>
-								<a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Log In</a>
-							<?		
-								}
-							?>
-						</li>	
+						<?
+							if(empty($_SESSION['success'])){
+						?>
+								<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/login.php">Log In</a></li>
+						<?
+							} else{
+						?>
+								<li><a href="?logout">Log Out</a></li>
+						<?
+							}
+						?>						
 						<li><a href="<? $_SERVER['HTTP_HOST'] ?>/php/sandbox/blog/register.php">Register</a></li>
 					</ul>
 				</div>
