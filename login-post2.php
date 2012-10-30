@@ -29,6 +29,11 @@
 			$_SESSION['loggedIn'] = $loggedIn;//logged in status
 			header("Location: admin.php");
 			exit();
+		} else{
+			$errors[] = "Please try again.<br />";
+			$_SESSION['errors'] = $errors;
+			header("Location: login.php");
+			exit();
 		}					
 	} else{
 		$_SESSION['errors'] = $errors;
