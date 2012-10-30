@@ -8,7 +8,8 @@
 						POSTS.postDate, 
 						POSTS.postContent, 
 						POSTS.postAuthor,
-						USERS.userName
+						USERS.userName,
+						USERS.id
 				FROM posts AS POSTS 
 				LEFT JOIN users as USERS
 				ON POSTS.postAuthor = USERS.id
@@ -36,7 +37,7 @@
 					<hgroup>
 						<h2><?= strip_tags($row['postTitle']); ?></h2>
 						<h3><?= strip_tags($row['postSubhead']); ?></h3>
-						<h4>Posted by <?= strip_tags($row['userName']); ?> on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
+						<h4>Posted by <a href="author.php?id=<?= $row['id'] ?>&author=<?= $row['userName'] ?>"><?= strip_tags($row['userName']); ?></a> on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
 					</hgroup>
 					<p><?= post_preview_length(strip_tags($row['postContent'])); ?></p>
 					<p><a href="post.php?post=<?= strip_tags($row['postId']) ?>" class="read-more round3px">Read More &#8250;</a></p>

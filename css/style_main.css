@@ -164,7 +164,7 @@ table th, table td {text-align: left;}
 	padding: 10px 15px;
 	color: #fff;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 20px;
 }
 .button:hover, a.button:hover {background-color: #252525;}
@@ -203,7 +203,6 @@ a:link, a:visited, a:active, a {
 	transition: all 0.15s ease-in-out;
 	outline: none;
 	font-weight: 400;
-	font-size: 18px;
 	color: #FF5300;
 }
 

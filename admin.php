@@ -1,9 +1,10 @@
 <?
 	require_once('../_db_connect.php');
+	session_start();
+	
 	$page = "admin-page";//body tag class
 	$title = "BloggrCMS Admin";//title tag text
-	
-	session_start();
+		
 	require_once('includes/header.php'); 
 	
 	if(isset($_SESSION['userName'])){
