@@ -10,31 +10,25 @@
 		
 	$userName = $_SESSION['userName'];	
 	
-	$query = "SELECT id, firstName, lastName, userEmail, mailConfirm FROM users WHERE userName = '$userName'";
+	//THIS WAS MY FIRST QUERY BUT IT WAS WRONG B/C I NEEDED TO SPECIFY AN ALIAS FOR MY MULTIPLE ids EVEN THOUGH THEY WEREN'T IN THE SELECT QUERY. I LATER REALIZED I CAN COMBINE ALL THIS INTO A JOIN I PULLED EACH BIT OF DATA THAT I WANT TO INCLUDE ON THE PAGE
+	
+	$query = "SELECT	USERS.firstName, 
+					 	USERS.lastName, 
+					 	USERS.userEmail, 
+					 	USERS.userTypeId, 
+					 	ROLES.id, 
+					 	ROLES.roleName 
+				FROM userRoles AS ROLES 
+				LEFT JOIN users as USERS
+				ON ROLES.id = USERS.userTypeId
+				WHERE USERS.userName = '$userName'";
+				
+	//ROLES was used on ROLES.id because USERS has an id as well that conflicts even though it wasn't called in $query
+				
 	$result = mysqli_query($dbconnect, $query);
 	
-	
-	//THIS WAS MY FIRST QUERY BUT IT WAS WRONG B/C I NEEDED TO SPECIFY AN ALIAS. 
-	//I FOUND THIS OUT ON STACKOVERFLOW.COM
-	//$roleQuery = "SELECT id, roleName, userTypeId FROM userRoles JOIN users ON id=userTypeId";
-	
-	
-	//IF YOU HAVE TO DO A JOIN YOU'LL NEED TO DO IT IN A SEPARATE QUERY 
-	//you can pull data from these tables even if you don't "SELECT" if in the query. this is why i can pull USERS.userName
-	$roleQuery = "SELECT ROLES.id, ROLES.roleName, USERS.userTypeId 
-					FROM userRoles AS ROLES
-					INNER JOIN users AS USERS
-					ON ROLES.id = USERS.userTypeId
-					WHERE USERS.userName = '$userName'";
-								
-	//THESE TWO QUERIES WORK. THIS MEANS A JOIN SHOULD WORK, I'M JUST DOING THE JOIN SYNTAX WRONG
-	//$roleQuery = "SELECT id, roleName FROM userRoles";
-	//$roleQuery = "SELECT userTypeId FROM users";
-	//$roleQuery = "SELECT id, roleName, userTypeId from userRoles, users WHERE id = userTypeId";
-	$roleResult = mysqli_query($dbconnect, $roleQuery);
-	
 	/* if your db query ($roleResult) is wrong then debug it with:
-		if(!$roleResult){
+		if(!$result){
 			echo 'WRONG';
 		} else{
 			echo 'RIGHT';
@@ -48,26 +42,21 @@
 					<h1>Admin</h1>
 					<?
 						while($row = mysqli_fetch_array($result)){
-							$accountId = $row['id'];
 							$firstName = $row['firstName'];
 							$lastName = $row['lastName'];
-							$fullName = $firstName . $lastName;
+							$fullName = $firstName . " " . $lastName;
 							$accountEmail = $row['userEmail'];
+							$adminRole = $row['roleName'];
 					?>
-					<p>Hello, <?= $fullName ?>.</p>
+					<p>Hello, <?= $userName ?>.</p>
 				</div><!-- close left content -->
 				<div class="box-4 right-content">
 					<aside>
 						<h2>Profile Details</h2>
 						<ul class="profile-details">
 							<li>Name: <?= $fullName ?></li>
-							<li>Email: <?= $accountEmail ?></li>
-					<? } ?> <!-- close while loop -->
-					<?
-						while($roleRow = mysqli_fetch_array($roleResult)){
-							$adminRole = $roleRow['roleName'];
-					?>					
-						<li>Admin Role: <?= ucwords($adminRole) ?></li>		
+							<li>Email: <?= $accountEmail ?></li>							
+							<li>Admin Role: <?= ucwords($adminRole) ?></li>		
 					<? } ?>							
 						</ul>
 					</aside>
