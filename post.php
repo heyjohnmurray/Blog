@@ -4,7 +4,7 @@
 
 	$postId = $_GET['post'];
 
-	$query = "SELECT postId, postTitle, postSubhead, postDate, postContent FROM posts WHERE postId = '$postId' ";
+	$query = "SELECT postId, postTitle, postSubhead, postDate, postContent, postAuthor FROM posts WHERE postId = '$postId' ";
 	$result = mysqli_query($dbconnect, $query);
 	
 	$page = "post-page";	
@@ -24,7 +24,7 @@
 					<article>
 						<hgroup>
 							<h2><?= strip_tags($row['postSubhead']); ?></h2>
-							<h3>Posted on <?= strip_tags(date('F d, Y', strtotime($row['postDate']))); ?> at <?= strip_tags(date('h:i', strtotime($row['postDate']))); ?></h4>
+							<h3>Posted by <?= strip_tags($row['postAuthor']); ?> on <?= strip_tags(date('F d, Y', strtotime($row['postDate']))); ?> at <?= strip_tags(date('h:i', strtotime($row['postDate']))); ?></h4>
 						</hgroup>
 						<p><?= $row['postContent']; ?></p>
 					</article>	

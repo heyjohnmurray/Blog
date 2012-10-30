@@ -21,13 +21,17 @@
 		$post_content = $_POST['post-content'];
 	}
 	
-	header("Location: add-post.php");
+	if(!empty($_POST['authorId'])){
+		$authorId = $_POST['authorId'];
+	} else{
+		$errors[] = "WRONG!";
+	}
 	
 	if(empty($errors)){
 		
-		$query = "INSERT INTO posts (postTitle, postSubhead, postContent) VALUES (?,?,?)";
+		$query = "INSERT INTO posts (postTitle, postSubhead, postContent, postAuthor) VALUES (?,?,?,?)";
 		$stmt = mysqli_prepare($dbconnect, $query);
-		mysqli_bind_param($stmt, "sss", $post_title, $post_subhead, $post_content);
+		mysqli_bind_param($stmt, "sssi", $post_title, $post_subhead, $post_content, $authorId);
 
 		if(mysqli_execute($stmt)){		
 			$success;			

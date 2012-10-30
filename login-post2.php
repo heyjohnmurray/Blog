@@ -18,12 +18,15 @@
 	}
 	
 	if(empty($errors)){
-		$query = "SELECT userName, password FROM users WHERE userName = '$userName' and password = SHA1('$password')";
+		$query = "SELECT id, userName, password FROM users WHERE userName = '$userName' and password = SHA1('$password')";
 		$result = mysqli_query($dbconnect, $query);		
 		if(mysqli_num_rows($result) == 1){//if username and password match;
 			$row = mysqli_fetch_array($result);
-			$_SESSION['userName'] = $userName;//this will be used throughout the site
-			$_SESSION['loggedIn'] = $loggedIn;		
+			//these variables will be used throughout the site			
+			$userId = $row['id'];//get userName id and assign it to $userId
+			$_SESSION['userId'] = $userId;//logged userId
+			$_SESSION['userName'] = $userName;//logged in userName
+			$_SESSION['loggedIn'] = $loggedIn;//logged in status
 			header("Location: admin.php");
 			exit();
 		}					

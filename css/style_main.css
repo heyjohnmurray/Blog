@@ -262,7 +262,7 @@ hr{border-top: medium double #c4c4c4;}
 
 /* admin.php Template */
 .admin-page{}
-.admin-page .profile-details{}
+.admin-page .profile-details{margin: 10px 0px 20px 0px;}
 .admin-page .profile-details li{font-size: 15px; margin: 3px 0px;}
 
 /* Sidebar */

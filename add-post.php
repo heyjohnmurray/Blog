@@ -10,7 +10,8 @@
 				<div class="box-10 centered-content">
 					<h1>Add a Post</h1>
 					<? include_once('includes/_validation_msg.html'); ?>
-					<form action="add-post-post2.php" method="post" class="admin-form add-post">						
+					<form action="add-post-post2.php" method="post" class="admin-form add-post">												
+						<input type="hidden" name="authorId" value="<?= $_SESSION['userId'] ?>" />
 						<label for="post-title">Title</label>
 						<input type="text" name="post-title" value="" class="post-title" />
 						<label for="post-subhead">Subhead <span class="note">(Optional)</span></label>

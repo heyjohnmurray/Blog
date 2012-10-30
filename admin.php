@@ -56,10 +56,15 @@
 						<ul class="profile-details">
 							<li>Name: <?= $fullName ?></li>
 							<li>Email: <?= $accountEmail ?></li>							
-							<li>Admin Role: <?= ucwords($adminRole) ?></li>		
-					<? } ?>							
+							<li>Admin Role: <?= ucwords($adminRole) ?></li>
 						</ul>
-					</aside>
+						<h2>Add Content</h2>
+						<ul class="profile-details">
+							<li><a href="add-post.php">Add Post</a></li>
+							<li><a href="add-page.php">Add Page</a></li>
+						</ul>
+					</aside>						
+					<? } ?>							
 				</div><!-- close .box-4 -->								
 			</div><!-- close row -->
 		</div><!--/.box-16-->	

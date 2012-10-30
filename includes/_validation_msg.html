@@ -29,7 +29,7 @@
 			});								
 		</script>	
 	<?				
-			session_unset($_SESSION['success']);	
+			session_unset($_SESSION['success']); //I got rid of this b/c it was logging the user out. it was originally for sending a $success message on forms
 		}
 	?>
 </p>
