@@ -23,11 +23,12 @@
 						<input type="password" name="passwordOne" class="passwordOne" />
 						<label for="passwordTwo">Confirm Password</label>
 						<input type="password" name="passwordTwo" class="passwordTwo" />
-						<label for="userType" class="float-left user-type-label">Role</label>
-						<select name="userType" class="float-left">
-							<!-- see this page's post file for userType descriptions -->
-							<option value="subscriber">Subscriber</option>							
-							<option value="author">Author</option>
+						<label for="userTypeId" class="float-left user-type-label">Role</label>
+						<select name="userTypeId" class="float-left">							
+							<option value="6">Subscriber</option>
+							<option value="5">Contributor</option>
+							<option value="4">Author</option>
+							<option value="3">Editor</option>
 						</select>
 						<br class="clear" />
 						<input type="hidden" name="mailConfirm" value="No" />

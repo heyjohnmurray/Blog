@@ -5,17 +5,41 @@
 	
 	session_start();
 	require_once('includes/header.php'); 
-	//list of session vars
-		//$_SESSION['userName']; this is the userName	which we collect from the login page and login post file	
 	
 	if(isset($_SESSION['userName'])){
 		
 	$userName = $_SESSION['userName'];	
 	
-	$query = "SELECT id, firstName, lastName, userEmail, mailConfirm, userType FROM users WHERE userName = '$userName'";
+	$query = "SELECT id, firstName, lastName, userEmail, mailConfirm FROM users WHERE userName = '$userName'";
 	$result = mysqli_query($dbconnect, $query);
 	
 	
+	//THIS WAS MY FIRST QUERY BUT IT WAS WRONG B/C I NEEDED TO SPECIFY AN ALIAS. 
+	//I FOUND THIS OUT ON STACKOVERFLOW.COM
+	//$roleQuery = "SELECT id, roleName, userTypeId FROM userRoles JOIN users ON id=userTypeId";
+	
+	
+	//IF YOU HAVE TO DO A JOIN YOU'LL NEED TO DO IT IN A SEPARATE QUERY 
+	//you can pull data from these tables even if you don't "SELECT" if in the query. this is why i can pull USERS.userName
+	$roleQuery = "SELECT ROLES.id, ROLES.roleName, USERS.userTypeId 
+					FROM userRoles AS ROLES
+					INNER JOIN users AS USERS
+					ON ROLES.id = USERS.userTypeId
+					WHERE USERS.userName = '$userName'";
+								
+	//THESE TWO QUERIES WORK. THIS MEANS A JOIN SHOULD WORK, I'M JUST DOING THE JOIN SYNTAX WRONG
+	//$roleQuery = "SELECT id, roleName FROM userRoles";
+	//$roleQuery = "SELECT userTypeId FROM users";
+	//$roleQuery = "SELECT id, roleName, userTypeId from userRoles, users WHERE id = userTypeId";
+	$roleResult = mysqli_query($dbconnect, $roleQuery);
+	
+	/* if your db query ($roleResult) is wrong then debug it with:
+		if(!$roleResult){
+			echo 'WRONG';
+		} else{
+			echo 'RIGHT';
+		}
+	*/
 ?>
 	<section id="content">
 		<div class="box-16">
@@ -29,7 +53,6 @@
 							$lastName = $row['lastName'];
 							$fullName = $firstName . $lastName;
 							$accountEmail = $row['userEmail'];
-							$adminRole = $row['userType'];
 					?>
 					<p>Hello, <?= $fullName ?>.</p>
 				</div><!-- close left content -->
@@ -39,15 +62,21 @@
 						<ul class="profile-details">
 							<li>Name: <?= $fullName ?></li>
 							<li>Email: <?= $accountEmail ?></li>
-							<li>Admin Role: <?= ucwords($adminRole) ?></li>
+					<? } ?> <!-- close while loop -->
+					<?
+						while($roleRow = mysqli_fetch_array($roleResult)){
+							$adminRole = $roleRow['roleName'];
+					?>					
+						<li>Admin Role: <?= ucwords($adminRole) ?></li>		
+					<? } ?>							
 						</ul>
 					</aside>
 				</div><!-- close .box-4 -->								
 			</div><!-- close row -->
 		</div><!--/.box-16-->	
 	</section>
-	<? } //close while loop
-	} /*close isset conditional*/ else { ?>
+	
+	<? } /*close isset conditional*/ else { ?>
 	<section id="content">
 		<div class="box-16">
 			<div class="row">

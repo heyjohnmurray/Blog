@@ -39,20 +39,10 @@
 		}
 	}
 			
-	if(!empty($_POST['userType'])){
-		$userType = $_POST['userType'];
-/*
-		Summary of User Type Roles
-			Super Admin - Someone with access to the blog network administration features controlling the entire network (See Create a Network).
-			Administrator - Somebody who has access to all the administration features
-			Editor - Somebody who can publish and manage posts and pages as well as manage other users' posts, etc.
-			Author - Somebody who can publish and manage their own posts
-			Contributor - Somebody who can write and manage their posts but not publish them
-			Subscriber - Somebody who can only manage their profile
-*/
-
-	
+	if(!empty($_POST['userTypeId'])){
+		$userTypeId = $_POST['userTypeId'];			
 	}
+	
 	if(!empty($_POST['mailConfirm'])){
 		$mailConfirm = $_POST['mailConfirm'];
 	} 
@@ -66,13 +56,16 @@
 		mail($to,$subject,$message);		
 	}*/
 	
+/*
 	header("Location: register.php");
+	exit();
+*/
 	
 	if(empty($errors)){
 		
-		$query = "INSERT INTO users (userName, firstName, lastName, userEmail, password, mailConfirm, userType) values(?,?,?,?,?,?,?)"; 		
+		$query = "INSERT INTO users (userName, firstName, lastName, userEmail, password, mailConfirm, userTypeId) values(?,?,?,?,?,?,?)"; 		
 		$stmt = mysqli_prepare($dbconnect,  $query);
-		mysqli_stmt_bind_param($stmt, "sssssss", $userName, $firstName, $lastName, $userEmail, SHA1($password), $mailConfirm, $userType);			
+		mysqli_stmt_bind_param($stmt, "ssssssi", $userName, $firstName, $lastName, $userEmail, SHA1($password), $mailConfirm, $userTypeId);			
 		
 		if(mysqli_stmt_execute($stmt)){		
 			$success;					
