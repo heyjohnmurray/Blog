@@ -1,4 +1,4 @@
-<?
+asdf<?
 	$page = "register-page";//body tag class
 	$title = "Register for free your Bloggr Account";//title tag text
 	session_start();
