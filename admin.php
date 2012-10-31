@@ -28,6 +28,13 @@
 				
 	$result = mysqli_query($dbconnect, $query);
 	
+	/* if your db query ($roleResult) is wrong then debug it with:
+		if(!$result){
+			echo 'WRONG';
+		} else{
+			echo 'RIGHT';
+		}
+	*/
 ?>
 	<section id="content">
 		<div class="box-16">
