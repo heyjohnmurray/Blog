@@ -1,4 +1,7 @@
 <?
+	require_once('../_db_connect.php');
+	require_once('includes/_functions.php');
+
 	$page = "add-page";	
 	$title = "Add a Page";
 	session_start();	

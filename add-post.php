@@ -1,4 +1,7 @@
 <?
+	require_once('../_db_connect.php');
+	require_once('includes/_functions.php');
+
 	$page = "add-post-page";	
 	$title = "Add a Post";
 	session_start();	

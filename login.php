@@ -1,4 +1,7 @@
 <?
+	require_once('../_db_connect.php');
+	require_once('includes/_functions.php');
+
 	$page = "login-page";//body tag class
 	$title = "Log in to your Bloggr Account";//title tag text
 	session_start();
