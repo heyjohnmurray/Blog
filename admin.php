@@ -1,5 +1,6 @@
 <?
 	require_once('../_db_connect.php');
+	require_once('includes/_functions.php');
 	session_start();
 	
 	$page = "admin-page";//body tag class
@@ -10,38 +11,68 @@
 	if(isset($_SESSION['userName'])){
 		
 	$userName = $_SESSION['userName'];	
+	$userId = $_SESSION['userId'];
 	
-	//THIS WAS MY FIRST QUERY BUT IT WAS WRONG B/C I NEEDED TO SPECIFY AN ALIAS FOR MY MULTIPLE ids EVEN THOUGH THEY WEREN'T IN THE SELECT QUERY. I LATER REALIZED I CAN COMBINE ALL THIS INTO A JOIN I PULLED EACH BIT OF DATA THAT I WANT TO INCLUDE ON THE PAGE
-	
-	$query = "SELECT	USERS.firstName, 
-					 	USERS.lastName, 
-					 	USERS.userEmail, 
-					 	USERS.userTypeId, 
-					 	ROLES.id, 
-					 	ROLES.roleName 
-				FROM userRoles AS ROLES 
-				LEFT JOIN users as USERS
-				ON ROLES.id = USERS.userTypeId
-				WHERE USERS.userName = '$userName'";
-				
-	//ROLES was used on ROLES.id because USERS has an id as well that conflicts even though it wasn't called in $query
-				
+	$query = 	"SELECT POSTS.postId,
+				POSTS.postTitle, 
+				POSTS.postDate 
+				FROM posts AS POSTS
+				LEFT JOIN users AS USERS
+				ON POSTS.postAuthor = USERS.id
+				WHERE USERS.id = '$userId'";
 	$result = mysqli_query($dbconnect, $query);
-	
-	/* if your db query ($roleResult) is wrong then debug it with:
-		if(!$result){
-			echo 'WRONG';
-		} else{
-			echo 'RIGHT';
-		}
-	*/
 ?>
 	<section id="content">
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 left-content">
 					<h1>Admin</h1>
+					<p>Hello, <?= $userName ?>. Here's some of the content you've created:</p>						<table class="admin-edit-posts">									
+							<tr>
+								<td width="50%"><h3>Post Title</h3></td>
+								<td width="34%"><h3>Post Date</h3></td>
+								<td width="16%"></td>
+							</tr>
+							<?
+								include('includes/_validation_msg.html');
+							
+								while($row = mysqli_fetch_array($result)){
+									$postId = $row['postId'];
+									$postTitle = $row['postTitle'];
+									$postDate = $row['postDate'];
+							?>
+								<form action="remove-post-post2.php" method="post">
+									<input type="hidden" name="removedPostId" value="<?= $row['postId'] ?>" />
+									
+										<tr>
+											<td colspan="1" align="left" valign="middle"><strong><a href="post.php?post=<?= $postId ?>"><?= $postTitle ?></a></strong></td>
+											<td colspan="1" align="left" valign="middle"><?= date('F d, Y', strtotime($postDate)); ?></td>
+											<td colspan="1" align="right" valign="middle"><input type="submit" class="submit button round3px" name="edit-posts" value="Edit"></td>
+										</tr>								
+								</form>										
+							<?
+								}
+							?>
+						</table>
+				</div><!-- close left content -->
+				<div class="box-4 right-content">
+					<aside>
+						<h2>Profile Details</h2>
 					<?
+						$query = "SELECT	USERS.firstName, 
+										 	USERS.lastName, 
+										 	USERS.userEmail, 
+										 	USERS.userTypeId, 
+										 	ROLES.id, 
+										 	ROLES.roleName 
+									FROM userRoles AS ROLES 
+									LEFT JOIN users as USERS
+									ON ROLES.id = USERS.userTypeId
+									WHERE USERS.Id = '$userId'";
+									
+						$result = mysqli_query($dbconnect, $query);
+												
+						
 						while($row = mysqli_fetch_array($result)){
 							$firstName = $row['firstName'];
 							$lastName = $row['lastName'];
@@ -49,11 +80,7 @@
 							$accountEmail = $row['userEmail'];
 							$adminRole = $row['roleName'];
 					?>
-					<p>Hello, <?= $userName ?>.</p>
-				</div><!-- close left content -->
-				<div class="box-4 right-content">
-					<aside>
-						<h2>Profile Details</h2>
+							
 						<ul class="profile-details">
 							<li>Name: <?= $fullName ?></li>
 							<li>Email: <?= $accountEmail ?></li>							

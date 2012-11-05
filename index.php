@@ -1,4 +1,5 @@
 <?
+	session_start();
 	require_once('../_db_connect.php');
 	require_once('includes/_functions.php');
 	
@@ -22,7 +23,7 @@
 	$page = "posts-page";	
 	$title = "List of posts";
 	
-	session_start();
+	
 	require_once('includes/header.php'); 
 ?>	
 <section id="content">		
