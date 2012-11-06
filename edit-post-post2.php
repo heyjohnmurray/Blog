@@ -55,12 +55,12 @@
 			$result = mysqli_query($dbconnect, $query);				
 			
 			if(!$result){
-				$errors[] = "The query was wrong";
+				$errors[] = "The query was wrong"; //CHANGE THIS IN THE END
 				$_SESSION['errors'] = $errors;
 				header("Location: edit-post.php");
 				exit();
 			} else {
-				$success = "The query was right";
+				$success = "The query was right" //CHANGE THIS IN THE END;
 				$_SESSION['success'] = $success;
 				header("Location: edit-post.php");
 				exit();
