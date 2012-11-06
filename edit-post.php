@@ -20,17 +20,20 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 centered-content">
-					<form action="" method="post" class="admin-form">
+					<h1>Edit a Post</h1>
+					<? include('includes/_validation_msg.html'); ?>
+					<form action="edit-post-post2.php" method="post" class="admin-form edit-post">
 						<?
 							while($row = mysqli_fetch_array($result)){
-								$postTitle = strip_tags($row['postTitle']);
-								$postSubhead = strip_tags($row['postSubhead']);
-								$postContent = strip_tags($row['postContent']);
+							$postTitle = strip_tags($row['postTitle']);
+							$postSubhead = strip_tags($row['postSubhead']);
+							$postContent = strip_tags($row['postContent']);
 						?>
-								<input type="text" name="existingTitle" class="page-title" value="<?= $postTitle ?>" />
-								<input type="text" name="existingSubhead" class="page-subhead" value="<?= $postSubhead ?>" />
-								<textarea name="existingContent" class="page-content" cols="30" rows="10"><?= $postContent ?></textarea>
-								<input type="submit" class="submit button round3px float-right" name="add-page" value="Save Edits!">								
+							<input type="text" name="existingTitle" class="page-title" value="<?= $postTitle ?>" />
+							<input type="text" name="existingSubhead" class="page-subhead" value="<?= $postSubhead ?>" />
+							<textarea name="existingContent" class="page-content" cols="30" rows="10"><?= $postContent ?></textarea>
+							<input type="reset" class="red-btn button round3px float-left" name="clear" value="Reset" />								
+							<input type="submit" class="submit button round3px float-right" name="addPage" value="Save Edits!" />								
 						<?		
 							}
 						?>					

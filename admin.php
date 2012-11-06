@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="box-10 left-content">
 					<h1>Admin</h1>
-					<p>Hello, <?= $userName ?>. Here's some of the content you've created:</p>						
+					<p>Hello, you are logged in as <?= $userName ?>. Here's some of the content you've created:</p>						
 						<table class="admin-edit-posts">									
 							<tr>
 								<td width="57%"><h3>Post Title</h3></td>
@@ -47,7 +47,7 @@
 									<td colspan="1" align="left" valign="middle"><strong><a href="post.php?post=<?= $postId ?>"><?= $postTitle ?></a></strong></td>
 									<td colspan="1" align="left" valign="middle"><?= date('F d, Y', strtotime($postDate)); ?></td>																
 									<td colspan="1" align="left" valign="middle"><input type="submit" class="submit button small-btn round3px" name="edit-posts" value="Edit"></td>
-									<td colspan="1" align="left" valign="middle"><input type="submit" class="submit button small-btn round3px" name="delete-posts" value="Delete"></td>
+									<td colspan="1" align="left" valign="middle"><input type="submit" class="red-btn button small-btn round3px" name="delete-posts" value="Delete"></td>
 								</form>
 							</tr>
 							<?

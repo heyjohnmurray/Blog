@@ -11,26 +11,8 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 centered-content">
-					<h1>Log In</h1>										
-					<p class="errors" id="errors">
-						<?															
-							if(!empty($_SESSION['errors'])){
-						?>
-								<script type="text/javascript">
-									$(function() {
-										setTimeout(function(){
-											$("#errors").fadeIn(500);											
-										}, 500)
-									});								
-								</script>								
-						<?
-								foreach($_SESSION['errors'] as $error){
-									echo $error;
-								}
-								session_unset($_SESSION['errors']);
-							} 							
-						?>
-					</p>					
+					<h1>Log In</h1>					
+					<? include('includes/_validation_msg.html'); ?>					
 					<form action="login-post2.php" method="post" class="admin-form login">
 						<label for="userName">User Name</label>
 						<input type="text" name="userName" class="user-name" value="" />
