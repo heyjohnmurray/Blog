@@ -21,13 +21,13 @@
 		
 		if(empty($_POST['existingSubhead'])){
 			
-			$newSubhead = NULL;
-			
+			$newSubhead = "NULL";			
 			//$newSubhead = " "; //sloppy but not great
 			
 		} else{
 			
-			$newSubhead = $_POST['existingSubhead'];
+			$newSubhead = " ' " . $_POST['existingSubhead'] . " ' ";			
+			//this was tricky. i just needed to add the quotes around here and leave them off of the variable in the update query.
 			
 		}
 		
@@ -49,7 +49,7 @@
 		
 		if(empty($errors)){
 			
-			$query = "UPDATE posts SET postTitle = '$newTitle', postSubhead = '$newSubhead', postContent = '$newContent', postAuthor = $authorId WHERE postId = '$editId'";
+			$query = "UPDATE posts SET postTitle = '$newTitle', postSubhead = $newSubhead, postContent = '$newContent', postAuthor = $authorId WHERE postId = '$editId'";
 			//the quotes are needed around these vars b/c they're strings. this took forever to figure out.
 			
 			$result = mysqli_query($dbconnect, $query);				
@@ -60,7 +60,7 @@
 				header("Location: edit-post.php");
 				exit();
 			} else {
-				$success = "The query was right" //CHANGE THIS IN THE END;
+				$success = "The query was right"; //CHANGE THIS IN THE END
 				$_SESSION['success'] = $success;
 				header("Location: edit-post.php");
 				exit();
