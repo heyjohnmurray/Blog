@@ -27,29 +27,29 @@
 			<div class="row">
 				<div class="box-10 left-content">
 					<h1>Admin</h1>
-					<p>Hello, <?= $userName ?>. Here's some of the content you've created:</p>						<table class="admin-edit-posts">									
+					<p>Hello, <?= $userName ?>. Here's some of the content you've created:</p>						
+						<table class="admin-edit-posts">									
 							<tr>
-								<td width="50%"><h3>Post Title</h3></td>
-								<td width="34%"><h3>Post Date</h3></td>
-								<td width="16%"></td>
+								<td width="57%"><h3>Post Title</h3></td>
+								<td width="27%"><h3>Post Date</h3></td>
+								<td width="8%"></td>
+								<td width="8%"></td>
 							</tr>
-							<?
-								include('includes/_validation_msg.html');
-							
+							<?								
 								while($row = mysqli_fetch_array($result)){
 									$postId = $row['postId'];
 									$postTitle = $row['postTitle'];
 									$postDate = $row['postDate'];
 							?>
+							<tr>
 								<form action="remove-post-post2.php" method="post">
-									<input type="hidden" name="removedPostId" value="<?= $row['postId'] ?>" />
-									
-										<tr>
-											<td colspan="1" align="left" valign="middle"><strong><a href="post.php?post=<?= $postId ?>"><?= $postTitle ?></a></strong></td>
-											<td colspan="1" align="left" valign="middle"><?= date('F d, Y', strtotime($postDate)); ?></td>
-											<td colspan="1" align="right" valign="middle"><input type="submit" class="submit button round3px" name="edit-posts" value="Edit"></td>
-										</tr>								
-								</form>										
+									<input type="hidden" name="postId" value="<?= $row['postId'] ?>" />																	
+									<td colspan="1" align="left" valign="middle"><strong><a href="post.php?post=<?= $postId ?>"><?= $postTitle ?></a></strong></td>
+									<td colspan="1" align="left" valign="middle"><?= date('F d, Y', strtotime($postDate)); ?></td>																
+									<td colspan="1" align="left" valign="middle"><input type="submit" class="submit button small-btn round3px" name="edit-posts" value="Edit"></td>
+									<td colspan="1" align="left" valign="middle"><input type="submit" class="submit button small-btn round3px" name="delete-posts" value="Delete"></td>
+								</form>
+							</tr>
 							<?
 								}
 							?>

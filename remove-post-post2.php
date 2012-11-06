@@ -2,16 +2,15 @@
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
 		session_start();
-		require_once('../_db_connect.php');
+		require_once('../_db_connect.php');		
 			
-		if(!empty($_POST['removedPostId'])){
-		
-			$removedId = $_POST['removedPostId'];			
+		if(isset($_POST['delete-posts'])){
 			
-			//run the query
+			$removedId = $_POST['postId'];	
+			
+			//run delete query
 			$query = "DELETE FROM posts WHERE postId = '$removedId'";			
-			$result = mysqli_query($dbconnect, $query);
-			
+			$result = mysqli_query($dbconnect, $query);			
 			
 			if($result){				
 			
@@ -19,6 +18,17 @@
 				exit();
 				
 			}				
+			
+		}
+		
+		if(isset($_POST['edit-posts'])){
+			
+			//redirect to edit page
+			$editId = $_POST['postId'];
+			$_SESSION['editId'] = $editId;
+			
+			header("Location: edit-post.php");
+			exit();
 			
 		}		
 			

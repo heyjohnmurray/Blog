@@ -33,15 +33,21 @@
 				<h1>Recent Posts</h1>				
 				<?
 					while($row = mysqli_fetch_array($result)){ 
+						$postId = strip_tags($row['postId']);
+						$postTitle = strip_tags($row['postTitle']);
+						$postSubhead =  strip_tags($row['postSubhead']);
+						$userName = strip_tags($row['userName']);
+						$postDate = strip_tags($row['postDate']);
+						$postContent = strip_tags($row['postContent']);
 				?>
 				<article>
 					<hgroup>
-						<h2><?= strip_tags($row['postTitle']); ?></h2>
-						<h3><?= strip_tags($row['postSubhead']); ?></h3>
-						<h4>Posted by <a href="author.php?id=<?= $row['id'] ?>&author=<?= $row['userName'] ?>"><?= strip_tags($row['userName']); ?></a> on <?= date('F d, Y', strtotime($row['postDate'])); ?> at <?= date('h:i', strtotime($row['postDate'])); ?></h4>
+						<h2><?= $postTitle ?></h2>
+						<h3><?= $postSubhead ?></h3>
+						<h4>Posted by <a href="author.php?id=<?= $row['id'] ?>&author=<?= $userName ?>"><?= $userName ?></a> on <?= date('F d, Y', strtotime($postDate)); ?> at <?= date('h:i', strtotime($postDate)); ?></h4>
 					</hgroup>
-					<p><?= post_preview_length(strip_tags($row['postContent'])); ?></p>
-					<p><a href="post.php?post=<?= strip_tags($row['postId']) ?>" class="read-more round3px">Read More &#8250;</a></p>
+					<p><?= post_preview_length($postContent); ?></p>
+					<p><a href="post.php?post=<?= $postId ?>" class="read-more round3px">Read More &#8250;</a></p>
 				</article>
 				<?
 					}

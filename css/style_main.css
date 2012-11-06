@@ -15,7 +15,7 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font: inherit;	
 	vertical-align: baseline;
 }
 html {overflow-y: scroll;}
@@ -167,7 +167,10 @@ table th, table td {text-align: left;}
 	font-size: 18px;
 	line-height: 20px;
 }
+
 .button:hover, a.button:hover {background-color: #252525;}
+
+.small-btn{font-size: 12px; padding: 5px 10px;}
 
 /***********************************
 Main Stylesheet
@@ -264,6 +267,7 @@ hr{border-top: medium double #c4c4c4;}
 .admin-page h3{color: #484849; font-size: 20px; font-weight: 700;}
 .admin-page .profile-details{margin: 10px 0px 20px 0px;}
 .admin-page .profile-details li{font-size: 15px; margin: 3px 0px;}
+.admin-edit-posts{font-size: 15px;}
 
 /* Sidebar */
 .wrapper .right-content{float: right; margin: 0px 40px 0px 20px; padding: 20px 0px;}
