@@ -9,7 +9,9 @@
 	require_once('includes/header.php'); 
 	
 	if(isset($_SESSION['userName'])){
-		
+	
+	$userRole = $_SESSION['userRole'];
+	$userRoleType = $_SESSION['userRoleType'];	
 	$userName = $_SESSION['userName'];	
 	$userId = $_SESSION['userId'];
 	
@@ -26,7 +28,7 @@
 		<div class="box-16">
 			<div class="row">
 				<div class="box-10 left-content">
-					<h1>Admin</h1>
+					<h1><?= ucwords($_SESSION['userRoleType']) ?> Admin Panel</h1>
 					<p>Hello, you are logged in as <?= $userName ?>. Here's some of the content you've created:</p>						
 						<table class="admin-edit-posts">									
 							<tr>
@@ -76,20 +78,35 @@
 							$firstName = $row['firstName'];
 							$lastName = $row['lastName'];
 							$fullName = $firstName . " " . $lastName;
-							$accountEmail = $row['userEmail'];
-							$adminRole = $row['roleName'];							
+							$accountEmail = $row['userEmail'];							
 					?>
 							
 						<ul class="profile-details">
 							<li>Name: <?= $fullName ?></li>
 							<li>Email: <?= $accountEmail ?></li>							
-							<li>Admin Role: <?= ucwords($adminRole) ?></li>
+							<li>Admin Role: <?= ucwords($userRoleType) ?></li>
 						</ul>
-						<h2>Add Content</h2>
-						<ul class="profile-details">
-							<li><a href="add-post.php">Add Post</a></li>
-							<li><a href="add-page.php">Add Page</a></li>
-						</ul>
+						
+						<?
+							//if user's role is superuser-author, then show.
+							if($userRole <= 4){
+						?>
+						
+								<h2>Add Content</h2>
+								<ul class="profile-details">
+									<li><a href="add-post.php">Add Post</a></li>
+									<li><a href="add-page.php">Add Page</a></li>
+									<? if($userRole == 1){ ?>
+										
+										<li><a href="users.php">Manage Users</a></li>
+										
+									<? } ?>								
+								</ul>
+
+						<?		
+							}
+						?>
+						
 					</aside>						
 					<? } ?>							
 				</div><!-- close .box-4 -->								
