@@ -68,17 +68,16 @@
 									FROM userRoles AS ROLES 
 									LEFT JOIN users as USERS
 									ON ROLES.id = USERS.userTypeId
-									WHERE USERS.Id = '$userId'";
+									WHERE USERS.id = '$userId'";
 									
 						$result = mysqli_query($dbconnect, $query);
 												
-						
 						while($row = mysqli_fetch_array($result)){
 							$firstName = $row['firstName'];
 							$lastName = $row['lastName'];
 							$fullName = $firstName . " " . $lastName;
 							$accountEmail = $row['userEmail'];
-							$adminRole = $row['roleName'];
+							$adminRole = $row['roleName'];							
 					?>
 							
 						<ul class="profile-details">

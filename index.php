@@ -13,8 +13,7 @@
 						USERS.id
 				FROM posts AS POSTS 
 				LEFT JOIN users as USERS
-				ON POSTS.postAuthor = USERS.id
-				LIMIT 10";				
+				ON POSTS.postAuthor = USERS.id";				
 				
 				//this confused me b/c i thought that when i join a table i only had access to the part of the table that was joined, when in fact i have access to everything in both tables. all i needed to do was at USERS.userName to the query and add $row['userName'] into the html
 				

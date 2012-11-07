@@ -41,12 +41,6 @@
 			
 	if(!empty($_POST['userTypeId'])){
 		$userTypeId = $_POST['userTypeId'];			
-/*
-		if($userTypeId == "3"){
-			$query = "";
-			$result = ""
-		}
-*/
 	}
 	
 	if(!empty($_POST['mailConfirm'])){
