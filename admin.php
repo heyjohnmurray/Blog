@@ -7,22 +7,24 @@
 	$title = "BloggrCMS Admin";//title tag text
 		
 	require_once('includes/header.php'); 
+
+	if($_SESSION && $_SESSION['userRole'] <= 5){ 
 	
-	if(isset($_SESSION['userName'])){
-	
-	$userRole = $_SESSION['userRole'];
-	$userRoleType = $_SESSION['userRoleType'];	
-	$userName = $_SESSION['userName'];	
-	$userId = $_SESSION['userId'];
-	
-	$query = 	"SELECT POSTS.postId,
-				POSTS.postTitle, 
-				POSTS.postDate 
-				FROM posts AS POSTS
-				LEFT JOIN users AS USERS
-				ON POSTS.postAuthor = USERS.id
-				WHERE USERS.id = '$userId'";
-	$result = mysqli_query($dbconnect, $query);
+		if(isset($_SESSION['userName'])){
+		
+		$userRole = $_SESSION['userRole'];
+		$userRoleType = $_SESSION['userRoleType'];	
+		$userName = $_SESSION['userName'];	
+		$userId = $_SESSION['userId'];
+		
+		$query = 	"SELECT POSTS.postId,
+					POSTS.postTitle, 
+					POSTS.postDate 
+					FROM posts AS POSTS
+					LEFT JOIN users AS USERS
+					ON POSTS.postAuthor = USERS.id
+					WHERE USERS.id = '$userId'";
+		$result = mysqli_query($dbconnect, $query);
 ?>
 	<section id="content">
 		<div class="box-16">
@@ -114,21 +116,16 @@
 		</div><!--/.box-16-->	
 	</section>
 	
-	<? } /*close isset conditional*/ else { ?>
-	<section id="content">
-		<div class="box-16">
-			<div class="row">
-				<div class="box-10 left-content">
-					<h1>We're sorry!</h1>
-					<p>You need to <a href="login.php">log in</a> to view this page.</p>
-				</div><!-- close left content -->
-				<div class="box-4 right-content">
-					<? include_once('includes/_sidebar.php'); ?>
-				</div><!-- close .box-4 -->								
-			</div><!-- close row -->
-		</div><!--/.box-16-->	
-	</section>
-	<? } ?>
+	<?	} //end if(isset($_SESSION['userName']))
+	} else if($_SESSION && $_SESSION['userRole'] == 6) { //if logged in and subscriber
+	
+		include('includes/_permissions_prompt.php');
+	
+	} else { //if not logged in and NOT subscriber
+		
+		include('includes/_login_prompt.php');
+		
+	} ?>
 <? require_once('includes/footer.php'); ?>
 </div>
 </body>

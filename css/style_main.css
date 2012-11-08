@@ -294,6 +294,11 @@ hr{border-top: medium double #c4c4c4;}
 .admin-page .profile-details li{font-size: 15px; margin: 3px 0px;}
 .admin-edit-posts{font-size: 15px;}
 
+/* users.php Template */
+.manage-users{}
+	.manage-users .users-table{margin: 20px 0px;}
+	.users-list .thead div{font-weight: bold;}
+	.users-list	.tbody:nth-child(odd){background: #ededed;}
 
 /* Sidebar */
 .wrapper .right-content{float: right; margin: 0px 40px 0px 20px; padding: 20px 0px;}
